@@ -1,0 +1,114 @@
+body {
+    background-color: #2e2c29;
+}
+.noselect {
+    -webkit-touch-callout : none ;
+    -webkit-user-select : none ;
+    -khtml-user-select : none ;
+    -moz-user-select : none ;
+    -ms-user-select : none ;
+    user-select : none ;
+}
+
+.main{
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logotext {
+    color: white !important;
+    font-size: 26px;
+    line-height: 26px;
+    /* margin-bottom: 8px; */
+    margin-top: 8px;
+}
+
+.loader {
+    border: 5px solid #3070b7;
+    border-radius: 50%;
+    border-top: 5px solid transparent;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    margin: auto;
+    /* right:15px;
+    top: 22px; */
+}
+
+.status{
+   position: relative;
+   font-size: 15px;
+   line-height: 100px;
+   color: #ccc;
+   top: -20px;
+
+   /* bottom: 7px; */
+   /* right: 15px; */
+}
+
+.progressbars{
+  background-color: #54504b;
+  height:7px;
+  position: relative;
+  left: 0px;
+  right:0px;
+  bottom: 0px;
+  border-radius: 50px;
+  /* z-index: 11; */
+}
+
+.progressbars > div{
+  background-color: #3070b7;
+  height:7px;
+  position: relative;
+  width:0%;
+  transition: width 0.125s;
+  border-radius: 50px;
+}
+
+.wrapper{
+     position: relative;
+     left:0px;
+     right:0px;
+     bottom:0px;
+     height:24px;
+}
+
+ .flex {
+   -webkit-box-flex: 1;
+   -ms-flex: 1 1 auto;
+   flex: 1 1 auto
+ }
+
+
+ /* Safari */
+ @-webkit-keyframes spin {
+     0% {
+         -webkit-transform: rotate(0deg);
+     }
+
+     100% {
+         -webkit-transform: rotate(360deg);
+     }
+ }
+
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ .center {
+     border: none !important;
+     text-align: center;
+ }

@@ -1,0 +1,28 @@
+{
+  "name": "mjolnir-league",
+  "productName": "Mjolnir League",
+  "version": "2.1.1",
+  "description": "Mjolnir League 2.0 New Style New Way",
+  "main": "index.js",
+  "scripts": {
+    "build:win": "electron-builder --config ./build/build-win.json",
+    "release:win": "electron-builder --config ./build/build-win.json --publish always",
+    "betarelease:win": "electron-builder --config ./build/build-win-beta-test.json --publish always"
+  },
+  "author": "Mjolnir Studio",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "asarmor": "2.0.0",
+    "electron": "^19.0.8",
+    "electron-builder": "^23.1.0"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.8",
+    "electron-store": "^8.0.2",
+    "electron-updater": "^5.0.5",
+    "got": "^12.1.0",
+    "i18n": "^0.15.0",
+    "lcu-connector-extra": "^1.0.5",
+    "path": "^0.12.7"
+  }
+}

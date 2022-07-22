@@ -1,0 +1,1 @@
+const {ipcMain, clipboard} = require('electron');
