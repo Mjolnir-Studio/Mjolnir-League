@@ -6,6 +6,7 @@
     "splashwindow ready to show": "載入畫面準備顯示!",
     "Mainwindow ready to show": "主畫面準備顯示!",
     "second instance": "偵測到你嘗試開啟第二個Mjolnir League軟體!\n軟體沒有跑嗎? ( •́ _ •̀)?\n幫你呼叫視窗出來!\n如果你確定這個是Bug!請立即回報至Discord社群詢問",
+    "ipcMain event": "事件已觸發",
     "Checking for update...": "檢查是否有更新...",
     "Checking for update... webContents": "檢查是否有更新...",
     "Update available.": "有可用更新版本!",

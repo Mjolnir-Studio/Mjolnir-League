@@ -19,7 +19,8 @@ function connect(){
         {
             rejectUnauthorized: false,
             timeout: 1000
-    });
+        }
+    );
     
     
     ws.on('open', function open() {

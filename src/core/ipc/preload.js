@@ -18,6 +18,7 @@ contextBridge.exposeInMainWorld(
             let validChannels = [
                 "update_percent",
                 "update_status",
+                "appver"
                 
             ];
             if (validChannels.includes(channel)) {

@@ -1,8 +1,8 @@
 "use strict";
 require('./logger');
 require('./global');
-
-const {app, ipcMain, clipboard} = require('electron');
+require('./ipc/ipcMain');
+const {app} = require('electron');
 const i = require('./i18n.config');
 const i18n_user = require('./i18n');
 const tray = require('./tray');

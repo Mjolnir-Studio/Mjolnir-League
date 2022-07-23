@@ -10,8 +10,7 @@ const $ = {
             exec('NET SESSION', function(err,so,se) {
                 if(se.length === 0){
                     console.log(`[INFO] ${i.__('Run as admin')}`);
-                    main.webContents.send("appver", appver);
-                    main.webContents.send("admin_permission", "管理員權限");
+                    // main.webContents.send("admin_permission", "管理員權限");
                     permission = true;
                 }else{
                     console.warn(`[WARN] ${i.__('Not run as admin')}`);

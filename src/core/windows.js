@@ -32,7 +32,7 @@ splash = new BrowserWindow
         fullscreenBoolean: false,
         fullscreenableBoolean: false,
         simpleFullscreenBoolean: false,
-        preload: __dirname + "/preload.js"
+        preload: __dirname + "/ipc/preload.js"
     }
 });
 splash.loadFile('src/resource/html/splash.html');
@@ -64,7 +64,7 @@ main = new BrowserWindow
         nodeIntegration: true,
         contextIsolation: true,
         enableRemoteModule: false, // turn off remote
-        preload: __dirname + "/preload.js" // use a preload script
+        preload: __dirname + "/ipc/preload.js" // use a preload script
     }
 });
 
