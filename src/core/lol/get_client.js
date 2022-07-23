@@ -22,6 +22,7 @@ lcu.on('connect', (data) => {
     client_lockfile.passwd =  connect_data['password'];
     console.log(`[INFO] ${i.__('lol client connect')}`);
     console.log(`${client_lockfile.method} ${client_lockfile.ip} ${client_lockfile.port} ${client_lockfile.username} ${client_lockfile.passwd}`);
+    client_connect_status = true;
     require('./websocket');
 });
 

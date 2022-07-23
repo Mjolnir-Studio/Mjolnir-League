@@ -3,3 +3,4 @@ dist
 package-lock.json
 package(release).json
 node_modules
+src/core/lol/backup
