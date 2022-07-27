@@ -36,13 +36,42 @@ global.logstorage = { // log calc storage
     type: null
 }
 
-// lol client
-global.client_connect_status = false;
-global.client_ws = null;
+// websocket
+global.ws = null;
+global.ws_status = false;
+
+// lol client (http / wss)
+
 global.client_lockfile = {
     method: null,
     ip: null,
     port: null,
     username: null,
     passwd: null, 
+}
+// wss
+global.client_connect_status = false;
+global.client_ws = null;
+// http
+global.url_prefix = null;
+
+// lol api data
+// gameQueueType
+global.selfsummoner = {
+    icon: 0,
+    id: null,
+    name: null,
+    pid: null,
+    platformId: null,
+    puuid: null,
+    summonerId: null,
+}
+// game status
+global.gameQueueType = null;
+global.gameStatus = null;
+global.gameflowphase = null;
+
+// app user setting
+global.settings = {
+    accept_checkbox: true
 }

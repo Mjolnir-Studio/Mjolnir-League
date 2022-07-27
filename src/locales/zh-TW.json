@@ -25,6 +25,7 @@
 	"Run as admin": "以管理員權限執行了!",
     "Not run as admin": "沒有以管理員權限執行!\n會出現這個錯誤很不尋常...請立即回報至Discord社群詢問!",
     "call lcu start": "呼叫LOL客戶端連線模組啟動",
+    "call lcu stop": "呼叫LOL客戶端連線模組關閉",
     "lol client connect": "LOL 客戶端已連線",
     "lol client disconnect": "等待連線到 LOL 客戶端"
 }

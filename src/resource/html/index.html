@@ -10,13 +10,35 @@
         $(".appver").text(data);
       });
 
+      window.api.receive("lcustatus", (data) => {
+        $(".lcustatus").text(data);
+      });
+
+      window.api.receive("gameQueueType", (data) => {
+        $(".gameQueueType").text(data);
+      });
+
+      window.api.receive("gameStatus", (data) => {
+        $(".gameStatus").text(data);
+      });
+      
+      window.api.receive("gameflowphase", (data) => {
+        $(".gameflowphase").text(data);
+      });
+
+
       function load(){
-        window.api.send("toMain","appver");
+        window.api.send("toMain", "appver");
+        window.api.send("toMain", "lcustatus");
       }
     </script>
 </head>
   <body onload="load()">
     hello electron
     <div class="appver">Waiting...</div>
+    <div class="lcustatus">Waiting lcu status...</div>
+    <div class="gameQueueType">Waiting gameQueueType...</div>
+    <div class="gameStatus">Waiting gameStatus...</div>
+    <div class="gameflowphase">Waiting gameflowphase...</div>
   </body>
 </html>

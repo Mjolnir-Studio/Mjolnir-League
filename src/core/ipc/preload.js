@@ -18,7 +18,11 @@ contextBridge.exposeInMainWorld(
             let validChannels = [
                 "update_percent",
                 "update_status",
-                "appver"
+                "appver",
+                "lcustatus",
+                "gameQueueType",
+                "gameStatus",
+                "gameflowphase",
                 
             ];
             if (validChannels.includes(channel)) {
