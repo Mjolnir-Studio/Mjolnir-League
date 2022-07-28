@@ -47,7 +47,8 @@ global.client_lockfile = {
     ip: null,
     port: null,
     username: null,
-    passwd: null, 
+    passwd: null,
+    httptoken: null
 }
 // wss
 global.client_connect_status = false;
@@ -73,5 +74,8 @@ global.gameflowphase = null;
 
 // app user setting
 global.settings = {
-    accept_checkbox: true
+    accept_checkbox: false
 }
+
+// app unit
+global.ReadyCheck = false;

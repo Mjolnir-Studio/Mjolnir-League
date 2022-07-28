@@ -1,4 +1,5 @@
 'use strict';
+const base64 = require('hi-base64');
 const LCUConnector = require('lcu-connector-extra').default;
 const lcu = new LCUConnector();
 
@@ -30,7 +31,12 @@ lcu.on('connect', async (data) => {
     // console.log(`${client_lockfile.method} ${client_lockfile.ip} ${client_lockfile.port} ${client_lockfile.username} ${client_lockfile.passwd}`); // Only Debug to show
     console.log(`${client_lockfile.method}://${client_lockfile.ip}:${client_lockfile.port}/`); // Only Debug to show
     console.log(`${client_lockfile.username} : ${client_lockfile.passwd}`); // Only Debug to show
-    url_prefix = `${client_lockfile.method}://${client_lockfile.ip}:${client_lockfile.port}/` // send to http
+    url_prefix = `${client_lockfile.method}://${client_lockfile.ip}:${client_lockfile.port}` // send to http
+    // Http Token 解密
+    let tmp_httptoken = "riot:" + client_lockfile.passwd;
+    let encode_token = base64.encode(tmp_httptoken);
+    client_lockfile.httptoken = "Basic " + encode_token
+
     client_connect_status = true;
     main.webContents.send('lcustatus', `${i.__('lol client connect')}`);
     await ws.connect();

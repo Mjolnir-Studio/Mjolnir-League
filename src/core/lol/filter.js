@@ -19,19 +19,14 @@ const $ = {
                 gameflowphase = data[2].data;
                 main.webContents.send('gameflowphase', `gameflowphase:${gameflowphase}`);
 
-                // if(settings.accept_checkbox){ // 設定
-                //     ml_main.webContents.send("game_status", `${gameflow} | ${i18n.__('Match found auto accept')}`);
-                //     console.log(`[INFO] ${i18n.__('Match found auto accept')}`);
-                //     post.matchmaking_accept();
-                // }else{
-                //     ml_main.webContents.send("game_status", `${gameflow} | ${i18n.__('Match found waiting player accept')}`);
-                //     console.log(`[INFO] ${i18n.__('Match found waiting player accept')}`);
-                // }
                 if(gameflowphase == "ReadyCheck"){ // 自動接受
                     console.log("檢查是否啟動自動接受....(如果有就會 accept_matchmaking)");
+                    ReadyCheck = true;
                     if(settings.accept_checkbox){
                         post.accept_matchmaking();
                     }
+                }else{
+                    ReadyCheck = false;
                 }
                 
             }else if(data[2].uri == "/lol-service-status/v1/ticker-messages"){ // debug uri
