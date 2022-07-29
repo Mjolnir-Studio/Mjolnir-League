@@ -58,6 +58,7 @@ main = new BrowserWindow
     show: false,
     webPreferences: {
         devTools: false,
+        // devTools: true,
         fullscreenBoolean: false,
         fullscreenableBoolean: false,
         simpleFullscreenBoolean: false,

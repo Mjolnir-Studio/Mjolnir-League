@@ -13,11 +13,47 @@
     <!-- 本地儲存資料 -->
     <script>
       // 本地儲存資料
+      window.api.receive("lcustatus", (data) => {
+        $("#client_is_found").text(data);
+      });
+
+      // sidebar display lang
+      window.api.receive("sidebardisplaylang-home", (data) => {
+        $("#sidebar_links_home").text(data);
+        $("#sidebar_links_home_tooltip").text(data);
+      });
+
+      window.api.receive("sidebardisplaylang-summoner", (data) => {
+        $("#sidebar_links_summoner").text(data);
+        $("#sidebar_links_summoner_tooltip").text(data);
+      });
+
+      window.api.receive("sidebardisplaylang-battle", (data) => {
+        $("#sidebar_links_battle").text(data);
+        $("#sidebar_links_battle_tooltip").text(data);
+      });
+
+      window.api.receive("sidebardisplaylang-chat", (data) => {
+        $("#sidebar_links_chat").text(data);
+        $("#sidebar_links_chat_tooltip").text(data);
+      });
+
+      window.api.receive("sidebardisplaylang-exit", (data) => {
+        $("#sidebar_links_exit").text(data);
+        $("#sidebar_links_exit_tooltip").text(data);
+      });
 
     </script>
     <script>
         function load(){
           // 啟動時聽取
+          window.api.send("toMain", "lcustatus");
+          // sidebar display lang
+          window.api.send("toMain", "sidebardisplaylang-home");
+          window.api.send("toMain", "sidebardisplaylang-summoner");
+          window.api.send("toMain", "sidebardisplaylang-battle");
+          window.api.send("toMain", "sidebardisplaylang-chat");
+          window.api.send("toMain", "sidebardisplaylang-exit");
         }
     </script>
   </head>
@@ -35,43 +71,43 @@
       <ul class="nav_list">
         <!-- 首頁 -->
         <li>
-          <a href="splash.html" target="page_container">
+          <a href="home.html" target="page_container">
             <i class="material-icons">home</i>
-            <span class="sidebar_links_name" id="sidebar_links_home">Home</span>
+            <span class="sidebar_links_name" id="sidebar_links_home">{}</span>
           </a>
-          <span class="tooltip" id="sidebar_links_home_tooltip">首頁</span>
+          <span class="tooltip" id="sidebar_links_home_tooltip">{}</span>
         </li>
         <!-- 召喚師資訊 -->
         <li>
-          <a href="javascript:summonerpage();">
+          <a href="summoner.html" target="page_container">
             <i class="material-icons">person</i>
-            <span class="sidebar_links_name">Summoner INFO</span>
+            <span class="sidebar_links_name" id="sidebar_links_summoner">{}</span>
           </a>
-          <span class="tooltip">召喚師資訊</span>
+          <span class="tooltip" id="sidebar_links_summoner_tooltip">{}</span>
         </li>
         <!-- 對戰資訊 -->
         <li>
-          <a href="javascript:battlepage();">
+          <a href="battle.html" target="page_container">
             <i class="material-icons">sports_mma</i>
-            <span class="sidebar_links_name">Battle INFO</span>
+            <span class="sidebar_links_name" id="sidebar_links_battle">{}</span>
           </a>
-          <span class="tooltip">對戰資訊</span>
+          <span class="tooltip" id="sidebar_links_battle_tooltip">{}</span>
         </li>
         <!-- 聊天訊息 -->
         <li>
-          <a href="javascript:chatpage();">
+          <a href="chat.html" target="page_container">
             <i class="material-icons">chat</i>
-            <span class="sidebar_links_name">Chat</span>
+            <span class="sidebar_links_name" id="sidebar_links_chat">{}</span>
           </a>
-          <span class="tooltip">聊天訊息</span>
+          <span class="tooltip" id="sidebar_links_chat_tooltip">{}</span>
         </li>
         <!-- 離開 -->
         <li>
           <a href="javascript:oncloseapp();">
             <i class="material-icons">exit_to_app</i>
-            <span class="sidebar_links_name">Exit App</span>
+            <span class="sidebar_links_name" id="sidebar_links_exit">{}</span>
           </a>
-          <span class="tooltip">退出</span>
+          <span class="tooltip" id="sidebar_links_exit_tooltip">{}</span>
         </li>
       </ul>
       <!-- Mjolnir League 帳號資訊 -->
@@ -81,10 +117,10 @@
             <i class="material-icons" id="account_circle">account_circle</i>
             <div class="profile_box">
               <div class="name" id="account_username">訪客</div>
-              <span style="color:white" id="client_is_found"></span>
+              <span style="color:white" id="client_is_found">Waiting client Connect...</span>
             </div>
           </div>
-          <a href="javascript:settingspage();"><i class="material-icons" id="settings">settings</i></a>
+          <a href="settings.html" target="page_container"><i class="material-icons" id="settings">settings</i></a>
         </div>
       </div>
     </div>
@@ -104,6 +140,5 @@
 
     <!-- 頁面內容 -->
     <iframe name="page_container" id="page_container"></iframe>
-    <script src="../plugin/index.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>

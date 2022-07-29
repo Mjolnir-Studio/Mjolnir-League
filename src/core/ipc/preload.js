@@ -23,7 +23,12 @@ contextBridge.exposeInMainWorld(
                 "gameQueueType",
                 "gameStatus",
                 "gameflowphase",
-                
+                // Sidebar
+                "sidebardisplaylang-home",
+                "sidebardisplaylang-summoner",
+                "sidebardisplaylang-battle",
+                "sidebardisplaylang-chat",
+                "sidebardisplaylang-exit",
             ];
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 

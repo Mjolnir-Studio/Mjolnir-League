@@ -4,7 +4,7 @@ global.appname = "Mjolnir League";
 global.appver = null;
 global.pid = 0, // process pid
 global.permission = false;
-global.log_dir = process.env.APPDATA + '\\.Mjolnir-League\\logger';
+global.log_dir = null;
 // app i18n
 global.UserLocale = null;
 global.UserLastLocale = null;

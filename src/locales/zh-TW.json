@@ -7,6 +7,7 @@
     "Mainwindow ready to show": "主畫面準備顯示!",
     "second instance": "偵測到你嘗試開啟第二個Mjolnir League軟體!\n軟體沒有跑嗎? ( •́ _ •̀)?\n幫你呼叫視窗出來!\n如果你確定這個是Bug!請立即回報至Discord社群詢問",
     "ipcMain event": "事件已觸發",
+    "ipcMain kill lolrender": "終結LOL繪製處理程序",
     "Checking for update...": "檢查是否有更新...",
     "Checking for update... webContents": "檢查是否有更新...",
     "Update available.": "有可用更新版本!",
@@ -27,5 +28,10 @@
     "call lcu start": "呼叫LOL客戶端連線模組啟動",
     "call lcu stop": "呼叫LOL客戶端連線模組關閉",
     "lol client connect": "LOL 客戶端已連線",
-    "lol client disconnect": "等待連線到 LOL 客戶端"
+    "lol client disconnect": "等待連線到 LOL 客戶端",
+    "sidebar links home": "首頁",
+    "sidebar links summoner": "召喚師資訊",
+    "sidebar links battle": "對戰資訊",
+    "sidebar links chat": "聊天資訊",
+    "sidebar links exit": "退出軟體"
 }

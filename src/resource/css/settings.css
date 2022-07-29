@@ -1,0 +1,264 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-user-drag: none;
+}
+
+.noselect {
+  -webkit-touch-callout : none ;
+  -webkit-user-select : none ;
+  -khtml-user-select : none ;
+  -moz-user-select : none ;
+  -ms-user-select : none ;
+  user-select : none ;
+}
+
+body{
+  background-color: #131211;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  /* left: 24px; */
+  /* overflow: hidden; */
+}
+
+.hr-solid {
+    border: 1px solid #7a756d;
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    /* margin-right: 10%; */
+}
+
+/* 首頁 - 內容設定 */
+.body_content{
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 0px;
+  transition: all 0.5s ease;
+}
+
+.body_content .text{
+  font-size: 175%;
+  font-weight: 500;
+  color: white;
+  margin: 12px;
+}
+
+.body_content span{
+  font-size: 150%;
+  font-weight: 500;
+  color: white;
+  margin: 12px;
+}
+
+/* 滑動按鈕區 */
+.switch{
+  width: 55px;
+  height: 25px;
+  position: relative;
+  top: -5px;
+}
+
+.switch label{
+  color: white;
+  white-space:nowrap;
+  position: relative;
+  top: 12.5px;
+  left: 75px;
+}
+/* 自動接受按鈕開關設定 */
+.accept_checkbox,
+.accept_checkbox_circle,
+.accept_checkbox_background{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.accept_checkbox{
+  width: 55px;
+  height: 25px;
+  opacity: 0;
+  top: 10px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.accept_checkbox_circle{
+  width: 25px;
+  height: 25px;
+  border: 1px solid #B3B3B3;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.accept_checkbox_background{
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #B3B3B3;
+}
+/* 自動接受按鈕開關設定 - core */
+.accept_checkbox:checked ~ .accept_checkbox_circle{
+  border: 1px solid #43b581;
+  left: 30px;
+}
+
+.accept_checkbox:checked ~ .accept_checkbox_background{
+  background-color: #43b581;
+}
+
+.accept_checkbox_circle,
+.accept_checkbox_background{
+  -webkit-transition: All 0.3s ease;
+     -moz-transition: All 0.3s ease;
+       -o-transition: All 0.3s ease;
+          transition: All 0.3s ease;
+}
+
+/* 調度更新頻率 */
+.body_content .refresh{
+  margin-left: 5px;
+}
+
+.body_content .refresh label{
+  color: white;
+  white-space:nowrap;
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+
+/* .body_content .refresh #api_refresh #find_refresh{ */
+.body_content .refresh input{
+  position: relative;
+  height: 30px; /* 按鈕背景高度 */
+  width: 90px; /* 按鈕背景寬度 */
+  margin: 0 5px;
+  list-style: none;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+
+/* 底部 按鈕 */
+.body_content .nav_list{
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+
+/* 刪除記錄檔按鈕 */
+.body_content .nav_list #cleanlog{
+  position: relative;
+  height: 30px; /* 按鈕背景高度 */
+  width: 175px; /* 按鈕背景寬度 */
+  margin: 0 5px;
+  list-style: none;
+  line-height: 30px;
+  border-radius: 12px;
+}
+
+.body_content .nav_list #cleanlog a{
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+  /* 邊框 */
+  border-color: #7a756d;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.body_content .nav_list #cleanlog a:hover{
+  color: white;
+  background: #54504b;
+}
+
+.body_content .nav_list #cleanlog a i{
+  /* icon location */
+  height: 50px;
+  line-height: 50px;
+  /* 圖示與文字間距 */
+  /* min-width: 20px; */
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  left: 5px;
+  padding-left: 5px;
+}
+
+/* 重啟客戶端 */
+.body_content .nav_list #kill_lolrender{
+  position: relative;
+  height: 30px; /* 按鈕背景高度 */
+  width: 175px; /* 按鈕背景寬度 */
+  margin: 0 5px;
+  list-style: none;
+  line-height: 30px;
+  border-radius: 12px;
+  top: -30px;
+  left: 185px;
+}
+
+.body_content .nav_list #kill_lolrender a{
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+  /* 邊框 */
+  border-color: #7a756d;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.body_content .nav_list #kill_lolrender a:hover{
+  color: white;
+  background: #54504b;
+}
+
+.body_content .nav_list #kill_lolrender a i{
+  /* icon location */
+  height: 50px;
+  line-height: 50px;
+  /* 圖示與文字間距 */
+  /* min-width: 20px; */
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  left: 5px;
+  padding-left: 5px;
+}
+
+/* 關於軟體 */
+/* LOGO 大小 */
+.body_content .logo #local_logo {
+  width:64px;
+  height:64px;
+}
+/* LOGO 與 LOGO text */
+.body_content .logo{
+  color: white;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  pointer-events: none;
+}
+
+.body_content .logo .logo_name{
+  font-size: 30px;
+}
