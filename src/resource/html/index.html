@@ -43,23 +43,23 @@
         $("#sidebar_links_exit_tooltip").text(data);
       });
 
+      window.api.receive("sidebardisplaylang-profile", (data) => {
+        $("#account_username").text(data);
+      });
+
     </script>
     <script>
         function load(){
           // 啟動時聽取
           window.api.send("toMain", "lcustatus");
           // sidebar display lang
-          window.api.send("toMain", "sidebardisplaylang-home");
-          window.api.send("toMain", "sidebardisplaylang-summoner");
-          window.api.send("toMain", "sidebardisplaylang-battle");
-          window.api.send("toMain", "sidebardisplaylang-chat");
-          window.api.send("toMain", "sidebardisplaylang-exit");
+          window.api.send("toMain", "sidebardisplaylang");
         }
     </script>
   </head>
   <body onload="load()">
     <!-- the content goes here -->
-    <div class="sidebar">
+    <div class="noselect sidebar">
       <div class="logo_content">
         <div class="logo">
           <!-- i calss = xxx logo icon -->

@@ -25,5 +25,15 @@ const $ = {
             }
         });
     },
+    showMessagelite: function(window, title, type, message, detail,nolink){
+        dialog.showMessageBox(window, {
+            title: title,
+            type: type,
+            message: message,
+            detail: detail,
+            noLink: nolink,
+            cancelId:1
+        });
+    },
 }
 module.exports = $;

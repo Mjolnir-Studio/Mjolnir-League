@@ -29,6 +29,7 @@ contextBridge.exposeInMainWorld(
                 "sidebardisplaylang-battle",
                 "sidebardisplaylang-chat",
                 "sidebardisplaylang-exit",
+                "sidebardisplaylang-profile",
             ];
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 

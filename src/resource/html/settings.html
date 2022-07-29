@@ -6,6 +6,7 @@
         <title>Mjolnir League - Settings</title>
         <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
         <link href="../css/settings.css" rel="stylesheet" type="text/css">
+        <link href="//cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" rel="stylesheet" type="text/css"/>
         <script src="../plugin/jquery.min.js"></script>
 
         <!-- Google Icons -->
@@ -18,12 +19,20 @@
           parent.api.receive("appver", (data) => {
             $("#appver").text(data);
           });
+
+          //accept_checkbox
+          parent.api.receive("accept_checkbox", (data)=>{
+            localStorage.setItem('accept_checkbox_data',data);
+            $('accept_checkbox').text(localStorage.getItem('accept_checkbox_data'));
+          });
         </script>
         <script>
           function load(){
             // 啟動時聽取
             parent.api.send("toMain", "appver");
-            // sidebar display lang
+            // 自動接受對戰
+            parent.api.send('toMain', ['accept_checkbox', (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):'']); // 後端
+            document.getElementById("accept_checkbox").checked = (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):''; //前端
           }
         </script>
     </head>
@@ -43,16 +52,43 @@
             <!-- <br><span style="color:white;">其他小功能</span><br> -->
             <hr class="hr-solid">
             <ul class="nav_list">
+              <!-- 刪除紀錄檔 -->
               <li id="cleanlog">
                 <a href="javascript:onCleanlog();">
                   <i class="material-icons">delete</i>
                   <span class="links_name">刪除紀錄檔</span>
                 </a>
               </li>
+              <!-- 重啟客戶端 -->
               <li id="kill_lolrender">
                 <a href="javascript:onKill_lolrender();">
                   <i class="material-icons">refresh</i>
                   <span class="links_name">重啟客戶端</span>
+                </a>
+              </li>
+              <!-- 待確認 -->
+              <li id="dev">
+                <a href="javascript:ondev();">
+                  <i class="material-icons">warning</i>
+                  <span class="links_name">在開發中...</span>
+                </a>
+              </li>
+            </ul>
+            <!-- 語言選擇 -->
+            <hr class="hr-solid">
+            <ul class="nav_list_lang">
+              <!-- 刪除紀錄檔 -->
+              <li id="English">
+                <a href="javascript:onEnglish();">
+                  <!-- <i class="material-icons">delete</i> -->
+                  <span class="links_name">English</span>
+                </a>
+              </li>
+              <!-- 重啟客戶端 -->
+              <li id="Chinese">
+                <a href="javascript:onChinese();">
+                  <!-- <i class="material-icons">refresh</i> -->
+                  <span class="links_name">繁體中文</span>
                 </a>
               </li>
             </ul>
@@ -74,7 +110,17 @@
               function onKill_lolrender(){
                 parent.api.send("toMain","kill_lolrender");
               }
+              
+              // Display Lang
+              function onEnglish(){
+                parent.api.send("toMain","English");
+              }
 
+              function onChinese(){
+                parent.api.send("toMain","Chinese");
+              }
+
+              // 自動接受
               function accept_checkbox_event(vaule){
                 localStorage.setItem('accept_checkbox_data', vaule.checked); // 前端
                 parent.api.send('toMain', ['accept_checkbox', vaule.checked]); // 後端

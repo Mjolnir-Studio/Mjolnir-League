@@ -95,7 +95,7 @@ autoUpdater.on('error', (err) => {
   //Error in auto-updater. HttpError: 500 When repo server error.
   let reg = RegExp(/HttpError: 500/);
   if(reg.exec(err)){
-    unit.showMessage(splash,"Updater Error 500 - Github have some issue\n Tips: This time Update is skip.","error", appname + " - Updater error");
+    unit.showMessage(splash, appname + " - Updater error", "error", "X _ X", "Updater Error 500 - Github have some issue\n Tips: This time Update is skip.", false);
   }
 });
 

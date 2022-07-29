@@ -28,11 +28,12 @@ body{
 
 .hr-solid {
     border: 1px solid #7a756d;
-    width: 50%;
+    /* width: 100%; */
+    width: 90%;
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left: 15px;
-    /* margin-right: 10%; */
+    margin-left: 5%;
+    /* margin-right: 5%; */
 }
 
 /* 首頁 - 內容設定 */
@@ -123,43 +124,17 @@ body{
           transition: All 0.3s ease;
 }
 
-/* 調度更新頻率 */
-.body_content .refresh{
-  margin-left: 5px;
-}
-
-.body_content .refresh label{
-  color: white;
-  white-space:nowrap;
-  position: relative;
-  top: 2px;
-  left: 5px;
-}
-
-/* .body_content .refresh #api_refresh #find_refresh{ */
-.body_content .refresh input{
-  position: relative;
-  height: 30px; /* 按鈕背景高度 */
-  width: 90px; /* 按鈕背景寬度 */
-  margin: 0 5px;
-  list-style: none;
-  line-height: 30px;
-  border-radius: 5px;
-}
-
-
-/* 底部 按鈕 */
+/* 多功能按鈕 */
 .body_content .nav_list{
-  margin-left: 5px;
-  margin-top: 10px;
+  margin-left: 10px;
+  /* margin-top: 10px; */
 }
-
 
 /* 刪除記錄檔按鈕 */
 .body_content .nav_list #cleanlog{
   position: relative;
-  height: 30px; /* 按鈕背景高度 */
-  width: 175px; /* 按鈕背景寬度 */
+  height: 30px;
+  width: 175px;
   margin: 0 5px;
   list-style: none;
   line-height: 30px;
@@ -201,8 +176,8 @@ body{
 /* 重啟客戶端 */
 .body_content .nav_list #kill_lolrender{
   position: relative;
-  height: 30px; /* 按鈕背景高度 */
-  width: 175px; /* 按鈕背景寬度 */
+  height: 30px;
+  width: 175px;
   margin: 0 5px;
   list-style: none;
   line-height: 30px;
@@ -231,6 +206,144 @@ body{
 }
 
 .body_content .nav_list #kill_lolrender a i{
+  /* icon location */
+  height: 50px;
+  line-height: 50px;
+  /* 圖示與文字間距 */
+  /* min-width: 20px; */
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  left: 5px;
+  padding-left: 5px;
+}
+
+/* dev */
+.body_content .nav_list #dev{
+  position: relative;
+  height: 0px;
+  width: 175px;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 30px;
+  border-radius: 12px;
+  top: -60px;
+  left: 370px;
+}
+
+.body_content .nav_list #dev a{
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+  /* 邊框 */
+  border-color: #7a756d;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.body_content .nav_list #dev a:hover{
+  color: white;
+  background: #54504b;
+}
+
+.body_content .nav_list #dev a i{
+  /* icon location */
+  height: 50px;
+  line-height: 50px;
+  /* 圖示與文字間距 */
+  /* min-width: 20px; */
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  left: 5px;
+  padding-left: 5px;
+}
+
+/* 語言 */
+.body_content .nav_list_lang{
+  margin-left: 10px;
+  /* margin-top: 10px; */
+}
+/* English */
+.body_content .nav_list_lang #English{
+  position: relative;
+  height: 30px;
+  width: 115px;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 30px;
+  border-radius: 12px;
+}
+
+.body_content .nav_list_lang #English a{
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+  /* 邊框 */
+  border-color: #7a756d;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.body_content .nav_list_lang #English a:hover{
+  color: white;
+  background: #54504b;
+}
+
+.body_content .nav_list_lang #English a i{
+  /* icon location */
+  height: 50px;
+  line-height: 50px;
+  /* 圖示與文字間距 */
+  /* min-width: 20px; */
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  left: 5px;
+  padding-left: 5px;
+}
+
+/* Chinese */
+.body_content .nav_list_lang #Chinese{
+  position: relative;
+  height: 30px;
+  width: 125px;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 30px;
+  border-radius: 12px;
+  top: -30px;
+  left: 130px;
+}
+
+.body_content .nav_list_lang #Chinese a{
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+  /* 邊框 */
+  border-color: #7a756d;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.body_content .nav_list_lang #Chinese a:hover{
+  color: white;
+  background: #54504b;
+}
+
+.body_content .nav_list_lang #Chinese a i{
   /* icon location */
   height: 50px;
   line-height: 50px;
