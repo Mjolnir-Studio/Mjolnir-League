@@ -30,6 +30,15 @@ contextBridge.exposeInMainWorld(
                 "sidebardisplaylang-chat",
                 "sidebardisplaylang-exit",
                 "sidebardisplaylang-profile",
+                // Settings
+                "settingspage-title",
+                "settingspage-accept_checkbox",
+                "settingspage-delete_button",
+                "settingspage-refresh_button",
+                "settingspage-dev_button",
+                "settingspage-appver",
+                "settingspage-appdev",
+                "settingspage-appdev_text",
             ];
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 

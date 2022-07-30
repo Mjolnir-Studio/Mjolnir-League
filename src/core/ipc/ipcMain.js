@@ -19,11 +19,9 @@ ipcMain.on("toMain", async (event, args) => {
     }else if(args == "English"){ // 顯示語言
       i.setLocale('en');
       store.set('UserLastLocale', 'en');
-      unit.showMessagelite(main, appname, "info", ":o", `Restart ${appname} will show you click display language`, false);
     }else if(args == "Chinese"){
       i.setLocale('tw');
       store.set('UserLastLocale', 'tw');
-      unit.showMessagelite(main, appname, "info", ":o", `重啟 ${appname} 後將顯示你點擊顯示語言`, false);
     }else if(args == "lcustatus"){
       let status = client_connect_status ? `${i.__('lol client connect')}` : `${i.__('lol client disconnect')}`;
       main.webContents.send('lcustatus', `${status}`);
@@ -34,6 +32,15 @@ ipcMain.on("toMain", async (event, args) => {
       main.webContents.send('sidebardisplaylang-chat', `${i.__('sidebar links chat')}`);
       main.webContents.send('sidebardisplaylang-exit', `${i.__('sidebar links exit')}`);
       main.webContents.send('sidebardisplaylang-profile', `${i.__('sidebar links profile')}`);
+    }else if(args == "settingspage"){
+      main.webContents.send('settingspage-title', `${i.__('settingspage title')}`);
+      main.webContents.send('settingspage-accept_checkbox', `${i.__('settingspage accept checkbox')}`);
+      main.webContents.send('settingspage-delete_button', `${i.__('settingspage delete button text')}`);
+      main.webContents.send('settingspage-refresh_button', `${i.__('settingspage refresh button text')}`);
+      main.webContents.send('settingspage-dev_button', `${i.__('settingspage dev button text')}`);
+      main.webContents.send('settingspage-appver', `${i.__('settingspage appver title')}`);
+      main.webContents.send('settingspage-appdev', `${i.__('settingspage appdev title')}`);
+      main.webContents.send('settingspage-appdev_text', `${i.__('settingspage appdev text')}`);
     }else if(args == "kill_lolrender"){
         exec('taskkill /f /im LeagueClientUxRender.exe',function (error, stdout, stderr) {
           console.log(`[INFO] ${i.__('ipcMain kill lolrender')}`)

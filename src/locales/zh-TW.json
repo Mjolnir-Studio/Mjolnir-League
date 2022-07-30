@@ -1,6 +1,4 @@
 {
-    "app basic info": "軟體基本資料",
-    "appname": "軟體名稱",
     "appver": "軟體版本",
     "app pre-work": "軟體前置作業完成!",
     "splashwindow ready to show": "載入畫面準備顯示!",
@@ -36,5 +34,13 @@
     "sidebar links battle": "對戰資訊",
     "sidebar links chat": "聊天資訊",
     "sidebar links exit": "退出軟體",
-    "sidebar links profile": "訪客"
+    "sidebar links profile": "訪客",
+    "settingspage title": "設定",
+    "settingspage accept checkbox": "自動接受對戰",
+    "settingspage delete button text": "刪除記錄檔",
+    "settingspage refresh button text": "重啟客戶端",
+    "settingspage dev button text": "在開發中...",
+    "settingspage appver title": "版本:",
+    "settingspage appdev title": "開發者:",
+    "settingspage appdev text": "Mjolnir Studio - yomisana"
 }

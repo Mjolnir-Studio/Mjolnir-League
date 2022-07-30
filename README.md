@@ -9,7 +9,7 @@
 
 [![Electron](https://img.shields.io/static/v1?style=for-the-badge&message=Electron&color=47848F&logo=Electron&logoColor=FFFFFF&label=)](https://www.electronjs.org/)
 [![Windows](https://img.shields.io/static/v1?style=for-the-badge&message=Windows&color=0078D6&logo=Windows&logoColor=FFFFFF&label=7/8/8.1/10/11+(x64))](https://www.microsoft.com/zh-tw/)
-[![MPL](https://img.shields.io/static/v1?style=for-the-badge&message=MPL&color=Green&label=LICENSE)]()
+[![MPL](https://img.shields.io/static/v1?style=for-the-badge&message=MPL2.0&color=Green&label=LICENSE)]()
 # 軟體成就
 - [2022/07/22] initial commit
 

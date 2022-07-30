@@ -25,11 +25,40 @@
             localStorage.setItem('accept_checkbox_data',data);
             $('accept_checkbox').text(localStorage.getItem('accept_checkbox_data'));
           });
+
+          // 顯示語言
+          parent.api.receive("settingspage-title", (data) => {
+            $("#title").text(data);
+          });
+          parent.api.receive("settingspage-accept_checkbox", (data) => {
+            $("#accept_checkbox_text").text(data);
+          });
+          parent.api.receive("settingspage-delete_button", (data) => {
+            $("#delete_button_text").text(data);
+          });
+          parent.api.receive("settingspage-refresh_button", (data) => {
+            $("#refresh_button_text").text(data);
+          });
+          parent.api.receive("settingspage-dev_button", (data) => {
+            $("#dev_button_text").text(data);
+          });
+          parent.api.receive("settingspage-appver", (data) => {
+            $("#appver_title").text(data);
+          });
+          parent.api.receive("settingspage-appdev", (data) => {
+            $("#appdev_title").text(data);
+          });
+          parent.api.receive("settingspage-appdev_text", (data) => {
+            $("#appdev_text").text(data);
+          });
+          
         </script>
         <script>
           function load(){
             // 啟動時聽取
             parent.api.send("toMain", "appver");
+            // 顯示語言
+            parent.api.send("toMain", "settingspage");
             // 自動接受對戰
             parent.api.send('toMain', ['accept_checkbox', (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):'']); // 後端
             document.getElementById("accept_checkbox").checked = (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):''; //前端
@@ -40,10 +69,10 @@
         <!-- body: 頁面內容 -->
         <div class="noselect body_content">
           <!-- <div class="text">Settings</div> -->
-            <span style="color:white;">設定</span>
+            <span style="color:white;" id="title"></span>
             <div class="switch"><!-- 按鈕區 -->
               <input type="checkbox" class="accept_checkbox" id="accept_checkbox" onchange="accept_checkbox_event(this)">
-              <label>自動接受對戰</label>
+              <label id="accept_checkbox_text"></label>
               <span class="accept_checkbox_background"></span>
               <span class="accept_checkbox_circle"></span>
             </div>
@@ -56,21 +85,21 @@
               <li id="cleanlog">
                 <a href="javascript:onCleanlog();">
                   <i class="material-icons">delete</i>
-                  <span class="links_name">刪除紀錄檔</span>
+                  <span class="links_name" id="delete_button_text"></span>
                 </a>
               </li>
               <!-- 重啟客戶端 -->
               <li id="kill_lolrender">
                 <a href="javascript:onKill_lolrender();">
                   <i class="material-icons">refresh</i>
-                  <span class="links_name">重啟客戶端</span>
+                  <span class="links_name" id="refresh_button_text"></span>
                 </a>
               </li>
               <!-- 待確認 -->
               <li id="dev">
                 <a href="javascript:ondev();">
                   <i class="material-icons">warning</i>
-                  <span class="links_name">在開發中...</span>
+                  <span class="links_name" id="dev_button_text"></span>
                 </a>
               </li>
             </ul>
@@ -98,8 +127,8 @@
               <img id="local_logo" src="../img/logo.png" alt="image error">
               <div class="logo_name">Mjolnir League</div>
             </div>
-            <span style="color:white;">版本:</span><span style="color:white" id="appver"></span><br>
-            <span>開發者: Mjolnir Studio - yomisana(優米撒那)</span>
+            <span style="color:white;" id="appver_title"></span><span style="color:white" id="appver"></span><br>
+            <span style="color:white;" id="appdev_title"></span><span style="color:white" id="appdev_text"></span>
 
             <!-- 讓按鈕有用吧! -->
             <script type="text/javascript">
@@ -114,10 +143,14 @@
               // Display Lang
               function onEnglish(){
                 parent.api.send("toMain","English");
+                parent.api.send("toMain", "sidebardisplaylang");
+                parent.api.send("toMain", "settingspage");
               }
 
               function onChinese(){
                 parent.api.send("toMain","Chinese");
+                parent.api.send("toMain", "sidebardisplaylang");
+                parent.api.send("toMain", "settingspage");
               }
 
               // 自動接受
