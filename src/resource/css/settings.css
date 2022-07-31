@@ -19,6 +19,7 @@
 
 body{
   background-color: #131211;
+  /* background-color: white; */
   position: relative;
   min-height: 100vh;
   width: 100%;
@@ -28,12 +29,11 @@ body{
 
 .hr-solid {
     border: 1px solid #7a756d;
-    /* width: 100%; */
-    width: 90%;
+    width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left: 5%;
-    /* margin-right: 5%; */
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 /* 首頁 - 內容設定 */
@@ -72,15 +72,13 @@ body{
   white-space:nowrap;
   position: relative;
   top: 12.5px;
-  left: 75px;
+  left: 100px;
 }
 /* 自動接受按鈕開關設定 */
-.accept_checkbox,
-.accept_checkbox_circle,
-.accept_checkbox_background{
+.accept_checkbox, .accept_checkbox_circle, .accept_checkbox_background{
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 25px;
 }
 
 .accept_checkbox{
@@ -109,15 +107,14 @@ body{
 /* 自動接受按鈕開關設定 - core */
 .accept_checkbox:checked ~ .accept_checkbox_circle{
   border: 1px solid #43b581;
-  left: 30px;
+  left: 55px;
 }
 
 .accept_checkbox:checked ~ .accept_checkbox_background{
   background-color: #43b581;
 }
 
-.accept_checkbox_circle,
-.accept_checkbox_background{
+.accept_checkbox_circle, .accept_checkbox_background{
   -webkit-transition: All 0.3s ease;
      -moz-transition: All 0.3s ease;
        -o-transition: All 0.3s ease;
@@ -135,10 +132,11 @@ body{
   position: relative;
   height: 30px;
   width: 175px;
-  margin: 0 5px;
+  /* margin: 0 5px; */
   list-style: none;
   line-height: 30px;
   border-radius: 12px;
+  left: 40px;
 }
 
 .body_content .nav_list #cleanlog a{
@@ -177,13 +175,13 @@ body{
 .body_content .nav_list #kill_lolrender{
   position: relative;
   height: 30px;
-  width: 175px;
-  margin: 0 5px;
+  width: 195px;
+  /* margin: 0 5px; */
   list-style: none;
   line-height: 30px;
   border-radius: 12px;
   top: -30px;
-  left: 185px;
+  left: 230px;
 }
 
 .body_content .nav_list #kill_lolrender a{
@@ -223,12 +221,12 @@ body{
   position: relative;
   height: 0px;
   width: 175px;
-  margin: 0 5px;
+  /* margin: 0 5px; */
   list-style: none;
   line-height: 30px;
   border-radius: 12px;
   top: -60px;
-  left: 370px;
+  left: 440px;
 }
 
 .body_content .nav_list #dev a{
@@ -273,10 +271,13 @@ body{
   position: relative;
   height: 30px;
   width: 115px;
-  margin: 0 5px;
+  /* margin: 0 5px; */
   list-style: none;
   line-height: 30px;
   border-radius: 12px;
+  left: 40px;
+  /* padding-top: 10px; */
+  margin-top: 10px;
 }
 
 .body_content .nav_list_lang #English a{
@@ -316,12 +317,12 @@ body{
   position: relative;
   height: 30px;
   width: 125px;
-  margin: 0 5px;
+  /* margin: 0 5px; */
   list-style: none;
   line-height: 30px;
   border-radius: 12px;
   top: -30px;
-  left: 130px;
+  left: 170px;
 }
 
 .body_content .nav_list_lang #Chinese a{

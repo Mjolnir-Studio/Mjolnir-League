@@ -34,6 +34,7 @@ ipcMain.on("toMain", async (event, args) => {
       main.webContents.send('sidebardisplaylang-profile', `${i.__('sidebar links profile')}`);
     }else if(args == "settingspage"){
       main.webContents.send('settingspage-title', `${i.__('settingspage title')}`);
+      main.webContents.send('settingspage-title_lang', `${i.__('settingspage title lang')}`);
       main.webContents.send('settingspage-accept_checkbox', `${i.__('settingspage accept checkbox')}`);
       main.webContents.send('settingspage-delete_button', `${i.__('settingspage delete button text')}`);
       main.webContents.send('settingspage-refresh_button', `${i.__('settingspage refresh button text')}`);

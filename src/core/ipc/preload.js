@@ -32,6 +32,7 @@ contextBridge.exposeInMainWorld(
                 "sidebardisplaylang-profile",
                 // Settings
                 "settingspage-title",
+                "settingspage-title_lang",
                 "settingspage-accept_checkbox",
                 "settingspage-delete_button",
                 "settingspage-refresh_button",

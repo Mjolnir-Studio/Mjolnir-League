@@ -1,0 +1,32 @@
+<!-- Home 的規劃就是 index 預設內容就是 等待LOL client 連線 -->
+<!-- 如果有連線到 index 發送 注入消息 把它引導到 home html 這樣一來 就可以了 -->
+我是home頁面
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mjolnir League - home</title>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+        <link href="../css/home.css" rel="stylesheet" type="text/css">
+        <script src="../plugin/jquery.min.js"></script>
+        <!-- Google Icons -->
+        <link rel="stylesheet" href="../css/google_icons.css">
+
+        <!-- ipc -->
+        <script>
+
+        </script>
+        <script>
+            function load(){
+              // example
+              parent.api.send("toMain", "");
+            }
+        </script>
+    </head>
+    <body onload="load()">
+        <div class="noselect body_content">
+            
+        </div>
+    </body>
+</html>

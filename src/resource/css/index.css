@@ -1,14 +1,17 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
     /* background-color: #2e2c29; */
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    -webkit-user-drag: none;
 }
 
 .noselect {
   -webkit-touch-callout : none ;
   -webkit-user-select : none ;
+  -webkit-user-drag: none;
   -khtml-user-select : none ;
   -moz-user-select : none ;
   -ms-user-select : none ;
@@ -26,8 +29,7 @@ body{
 iframe{
   padding-left: 74px;
   border-style: none;
-  /* width: 100vh; */
-  width: calc(100vw - 74px);
+  width: 100vw;
   height: 100vh;
   overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
@@ -252,37 +254,7 @@ iframe{
   font-size: 12px;
 }
 
-
-
 .sidebar.active .profile #settings{
   left: 88%;
   background: none;
-}
-
-/* 首頁 - 內容設定 */
-.body_content{
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 78px);
-  left: 78px;
-  transition: all 0.5s ease;
-}
-
-.body_content .text{
-  font-size: 175%;
-  font-weight: 500;
-  color: white;
-  margin: 12px;
-}
-
-.body_content span{
-  font-size: 150%;
-  font-weight: 500;
-  color: white;
-  margin: 12px;
-}
-
-.sidebar.active ~ .body_content{
-  width: calc(100% - 240px);
-  left: 240px;
 }

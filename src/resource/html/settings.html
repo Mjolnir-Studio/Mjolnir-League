@@ -30,6 +30,10 @@
           parent.api.receive("settingspage-title", (data) => {
             $("#title").text(data);
           });
+          parent.api.receive("settingspage-title_lang", (data) => {
+            $("#title_lang").text(data);
+          });
+          
           parent.api.receive("settingspage-accept_checkbox", (data) => {
             $("#accept_checkbox_text").text(data);
           });
@@ -105,6 +109,7 @@
             </ul>
             <!-- 語言選擇 -->
             <hr class="hr-solid">
+            <span style="color:white;" id="title_lang"></span>
             <ul class="nav_list_lang">
               <!-- 刪除紀錄檔 -->
               <li id="English">

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Mjolnir League</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
     <link href="../css/index.css" rel="stylesheet" type="text/css">
     <script src="../plugin/jquery.min.js"></script>
     <!-- Google Icons -->
@@ -56,7 +55,8 @@
           window.api.send("toMain", "sidebardisplaylang");
           // 自動接受對戰
           parent.api.send('toMain', ['accept_checkbox', (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):'']); // 後端
-          document.getElementById("accept_checkbox").checked = (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):''; //前端
+          // 預設頁面
+          $("#page_container").attr("src","home.html");
         }
     </script>
   </head>
@@ -76,41 +76,41 @@
         <li>
           <a href="home.html" target="page_container">
             <i class="material-icons">home</i>
-            <span class="sidebar_links_name" id="sidebar_links_home">{}</span>
+            <span class="sidebar_links_name" id="sidebar_links_home"></span>
           </a>
-          <span class="tooltip" id="sidebar_links_home_tooltip">{}</span>
+          <span class="tooltip" id="sidebar_links_home_tooltip"></span>
         </li>
         <!-- 召喚師資訊 -->
         <li>
           <a href="summoner.html" target="page_container">
             <i class="material-icons">person</i>
-            <span class="sidebar_links_name" id="sidebar_links_summoner">{}</span>
+            <span class="sidebar_links_name" id="sidebar_links_summoner"></span>
           </a>
-          <span class="tooltip" id="sidebar_links_summoner_tooltip">{}</span>
+          <span class="tooltip" id="sidebar_links_summoner_tooltip"></span>
         </li>
         <!-- 對戰資訊 -->
         <li>
           <a href="battle.html" target="page_container">
             <i class="material-icons">sports_mma</i>
-            <span class="sidebar_links_name" id="sidebar_links_battle">{}</span>
+            <span class="sidebar_links_name" id="sidebar_links_battle"></span>
           </a>
-          <span class="tooltip" id="sidebar_links_battle_tooltip">{}</span>
+          <span class="tooltip" id="sidebar_links_battle_tooltip"></span>
         </li>
         <!-- 聊天訊息 -->
         <li>
           <a href="chat.html" target="page_container">
             <i class="material-icons">chat</i>
-            <span class="sidebar_links_name" id="sidebar_links_chat">{}</span>
+            <span class="sidebar_links_name" id="sidebar_links_chat"></span>
           </a>
-          <span class="tooltip" id="sidebar_links_chat_tooltip">{}</span>
+          <span class="tooltip" id="sidebar_links_chat_tooltip"></span>
         </li>
         <!-- 離開 -->
         <li>
           <a href="javascript:oncloseapp();">
             <i class="material-icons">exit_to_app</i>
-            <span class="sidebar_links_name" id="sidebar_links_exit">{}</span>
+            <span class="sidebar_links_name" id="sidebar_links_exit"></span>
           </a>
-          <span class="tooltip" id="sidebar_links_exit_tooltip">{}</span>
+          <span class="tooltip" id="sidebar_links_exit_tooltip"></span>
         </li>
       </ul>
       <!-- Mjolnir League 帳號資訊 -->
@@ -119,8 +119,8 @@
           <div class="profile_details">
             <i class="material-icons" id="account_circle">account_circle</i>
             <div class="profile_box">
-              <div class="name" id="account_username">訪客</div>
-              <span style="color:white" id="client_is_found">Waiting client Connect...</span>
+              <div class="name" id="account_username"></div>
+              <span style="color:white" id="client_is_found"></span>
             </div>
           </div>
           <a href="settings.html" target="page_container"><i class="material-icons" id="settings">settings</i></a>
