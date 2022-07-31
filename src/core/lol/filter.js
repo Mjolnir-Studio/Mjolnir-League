@@ -20,7 +20,6 @@ const $ = {
                 main.webContents.send('gameflowphase', `gameflowphase:${gameflowphase}`);
 
                 if(gameflowphase == "ReadyCheck"){ // 自動接受
-                    console.log("檢查是否啟動自動接受....(如果有就會 accept_matchmaking)");
                     ReadyCheck = true;
                     if(settings.accept_checkbox){
                         post.accept_matchmaking();

@@ -54,6 +54,9 @@
           window.api.send("toMain", "lcustatus");
           // sidebar display lang
           window.api.send("toMain", "sidebardisplaylang");
+          // 自動接受對戰
+          parent.api.send('toMain', ['accept_checkbox', (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):'']); // 後端
+          document.getElementById("accept_checkbox").checked = (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):''; //前端
         }
     </script>
   </head>
