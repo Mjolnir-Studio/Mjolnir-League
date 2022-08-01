@@ -23,6 +23,8 @@ contextBridge.exposeInMainWorld(
                 "gameQueueType",
                 "gameStatus",
                 "gameflowphase",
+                // index
+                "indexpage-disconnect",
                 // Sidebar
                 "sidebardisplaylang-home",
                 "sidebardisplaylang-summoner",
@@ -40,6 +42,9 @@ contextBridge.exposeInMainWorld(
                 "settingspage-appver",
                 "settingspage-appdev",
                 "settingspage-appdev_text",
+                // waitinglol
+                "watinglolpage-title",
+                "watinglolpage-disconnect",
             ];
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 

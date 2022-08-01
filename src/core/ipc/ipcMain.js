@@ -23,7 +23,7 @@ ipcMain.on("toMain", async (event, args) => {
       i.setLocale('tw');
       store.set('UserLastLocale', 'tw');
     }else if(args == "lcustatus"){
-      let status = client_connect_status ? `${i.__('lol client connect')}` : `${i.__('lol client disconnect')}`;
+      let status = client_connect_status ? `${i.__('lol client connect')}:true` : `${i.__('lol client disconnect')}:false`;
       main.webContents.send('lcustatus', `${status}`);
     }else if(args == "sidebardisplaylang"){
       main.webContents.send('sidebardisplaylang-home', `${i.__('sidebar links home')}`);
@@ -42,6 +42,12 @@ ipcMain.on("toMain", async (event, args) => {
       main.webContents.send('settingspage-appver', `${i.__('settingspage appver title')}`);
       main.webContents.send('settingspage-appdev', `${i.__('settingspage appdev title')}`);
       main.webContents.send('settingspage-appdev_text', `${i.__('settingspage appdev text')}`);
+    }else if(args == "watinglolpage"){
+      main.webContents.send('watinglolpage-title', `${i.__('watinglolpage title')}`);
+      main.webContents.send('watinglolpage-disconnect', `${i.__('watinglolpage disconnect')}`);
+    }else if(args == "onDisconnect"){
+      main.webContents.send('indexpage-disconnect');
+
     }else if(args == "kill_lolrender"){
         exec('taskkill /f /im LeagueClientUxRender.exe',function (error, stdout, stderr) {
           console.log(`[INFO] ${i.__('ipcMain kill lolrender')}`)

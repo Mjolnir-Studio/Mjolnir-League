@@ -196,6 +196,7 @@ iframe{
 }
 
 .sidebar .sidebar_links_name{
+
   opacity: 0;
   pointer-events: none;
   transition: all 0.5s ease
@@ -204,6 +205,10 @@ iframe{
 .sidebar.active .sidebar_links_name{
   opacity: 1;
   pointer-events: auto;
+}
+
+#sidebar_links_summoner_tooltip{
+  font-size: 14px; 
 }
 
 /* 最底下的帳號資訊 */

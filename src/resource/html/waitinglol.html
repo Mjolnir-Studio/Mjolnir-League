@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- head definitions go here -->
+        <meta charset="UTF-8">
+        <title>Mjolnir League - waiting lol client connect</title>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+        <link href="../css/wlcc.css" rel="stylesheet" type="text/css">
+        <script src="../plugin/jquery.min.js"></script>
+
+        <!-- Google Icons -->
+        <link rel="stylesheet" href="../css/google_icons.css">
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+        <!-- 本地儲存資料 -->
+        <script>
+          parent.api.receive("watinglolpage-title", (data) => {
+            $("#title").text(data);
+          });
+          parent.api.receive("watinglolpage-disconnect", (data) => {
+            $("#disconnect").text(data);
+          });
+        </script>
+        <script>
+          function load(){
+            // 顯示語言
+            parent.api.send("toMain", "watinglolpage");
+          }
+        </script>
+    </head>
+    <body onload="load()">
+        <!-- body: 頁面內容 -->
+        <div class="noselect body_content">
+          <i class="material-icons" id="sad">sentiment_very_dissatisfied</i>
+          <i class="material-icons" id="more_horiz">more_horiz</i>
+          <i class="material-icons" id="disconnect_icon">cloud_off</i>
+          <!--  -->
+          <span id="title"></span>
+          <a id="disconnect" href="javascript:onDisconnect();"></a>
+
+            <!-- 讓按鈕有用吧! -->
+            <script type="text/javascript">
+              function onDisconnect(){
+                parent.api.send("toMain","onDisconnect");
+              }
+            </script>
+        </div>  <!-- Body End -->
+    </body>
+</html>

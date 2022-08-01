@@ -45,5 +45,7 @@
     "settingspage dev button text": "In dev...",
     "settingspage appver title": "version:",
     "settingspage appdev title": "dev:",
-    "settingspage appdev text": "Mjolnir Studio - yomisana"
+    "settingspage appdev text": "Mjolnir Studio - yomisana",
+    "watinglolpage title": "LOL client not detected is currently offline",
+    "watinglolpage disconnect": "Use offline status view"
 }

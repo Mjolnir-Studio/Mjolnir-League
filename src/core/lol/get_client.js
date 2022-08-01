@@ -38,7 +38,7 @@ lcu.on('connect', async (data) => {
     client_lockfile.httptoken = "Basic " + encode_token
 
     client_connect_status = true;
-    main.webContents.send('lcustatus', `${i.__('lol client connect')}`);
+    main.webContents.send('lcustatus', `${i.__('lol client connect')}:true`);
     await ws.connect();
     // ws.send(5,"GetLolGameflowV1GameflowPhase");
 });
@@ -52,5 +52,5 @@ lcu.on('disconnect', () => {
     client_lockfile.username =  null;
     client_lockfile.passwd =  null;
     client_connect_status = false;
-    main.webContents.send('lcustatus', `${i.__('lol client disconnect')}`);
+    main.webContents.send('lcustatus', `${i.__('lol client disconnect')}:false`);
 });

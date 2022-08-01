@@ -12,10 +12,6 @@
     <!-- 本地儲存資料 -->
     <script>
       // 本地儲存資料
-      window.api.receive("lcustatus", (data) => {
-        $("#client_is_found").text(data);
-      });
-
       // sidebar display lang
       window.api.receive("sidebardisplaylang-home", (data) => {
         $("#sidebar_links_home").text(data);
@@ -46,6 +42,21 @@
         $("#account_username").text(data);
       });
 
+      window.api.receive("lcustatus", (body) => {
+        let data = body?.split(':');
+        $("#client_is_found").text(data[0]);
+        if(data[1] == "true"){
+          console.log("lol客戶端有啟動! 所以給調度過的頁面");
+          $("#page_container").attr("src","home.html");
+        }else if(data[1] == "false"){
+          console.log("lol客戶端沒有啟動! 所以給等待頁面 或者直接點選查看離線頁面");
+          $("#page_container").attr("src","waitinglol.html");
+        }
+      });
+
+      window.api.receive("indexpage-disconnect", (data) => {
+        $("#page_container").attr("src","home.html");
+      });
     </script>
     <script>
         function load(){
@@ -56,7 +67,7 @@
           // 自動接受對戰
           parent.api.send('toMain', ['accept_checkbox', (localStorage.getItem("accept_checkbox_data")=='true')?localStorage.getItem("accept_checkbox_data"):'']); // 後端
           // 預設頁面
-          $("#page_container").attr("src","home.html");
+          // $("#page_container").attr("src","home.html");
         }
     </script>
   </head>
@@ -127,21 +138,29 @@
         </div>
       </div>
     </div>
-    <!-- 讓按鈕有用吧! -->
-    <script type="text/javascript">
-      let menu_btn = document.querySelector("#menu_btn");
-      let sidebar = document.querySelector(".sidebar");
 
-      menu_btn.onclick = function(){
-        sidebar.classList.toggle("active");
-      }
+    <!-- 頁面內容 -->
+    <iframe name="page_container" id="page_container"></iframe>
+    <!-- 頁面func! -->
+    <script type="text/javascript">
+      $(function(){
+          $("#menu_btn").on("click",function(e){
+            if($(".sidebar.active").length)
+                $(".sidebar").removeClass("active");
+            else
+                $(".sidebar").addClass("active");
+            e.stopPropagation();
+          });
+          $("iframe").on("load", function(){
+            $(this).contents().on("click", function(){
+                $(".sidebar").removeClass("active");
+            });
+          });
+      });
 
       function oncloseapp(){
         window.api.send("toMain","closeapp");
       }
     </script>
-
-    <!-- 頁面內容 -->
-    <iframe name="page_container" id="page_container"></iframe>
   </body>
 </html>

@@ -43,5 +43,7 @@
     "settingspage dev button text": "在開發中...",
     "settingspage appver title": "版本:",
     "settingspage appdev title": "開發者:",
-    "settingspage appdev text": "Mjolnir Studio - yomisana"
+    "settingspage appdev text": "Mjolnir Studio - yomisana",
+    "watinglolpage title": "沒有偵測到 LOL客戶端 目前處於離線狀態",
+    "watinglolpage disconnect": "使用離線狀態查看"
 }

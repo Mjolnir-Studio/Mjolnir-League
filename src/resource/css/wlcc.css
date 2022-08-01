@@ -1,0 +1,75 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.noselect {
+    -webkit-touch-callout : none ;
+    -webkit-user-select : none ;
+    -webkit-user-drag: none;
+    -khtml-user-select : none ;
+    -moz-user-select : none ;
+    -ms-user-select : none ;
+    user-select : none ;
+  }
+
+body{
+  /* 背景 */
+  /* background-color: white; */
+  background-color: #131211;
+}
+
+i{
+  display: block;
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-size: 64px !important;
+}
+
+#title{
+    display: block;
+    position: absolute;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 0px;
+    right: 0px;
+    transform: translate(0%, -50%);
+}
+
+#disconnect{
+    display: block;
+    position: absolute;
+    text-align: center;
+    color: gray;
+    top: 55%;
+    left: 0px;
+    right: 0px;
+    transform: translate(0%, -50%);
+}
+
+#sad{
+  top: 40%;
+  left: -150px;
+  right: 0px;
+  transform: translate(0%, -50%);
+}
+
+#more_horiz{
+  top: 40%;
+  left: 0px;
+  right: 0px;
+  transform: translate(0%, -50%);
+}
+
+#disconnect_icon{
+  top: 40%;
+  left: 150px;
+  right: 0px;
+  transform: translate(0%, -50%);
+}
+
+
