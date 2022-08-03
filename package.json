@@ -1,7 +1,7 @@
 {
   "name": "mjolnir-league",
   "productName": "Mjolnir League",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Mjolnir League 2.0 New Style New Way",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "Mjolnir Studio",
   "license": "MPL-2.0",
   "devDependencies": {
-    "asarmor": "2.1.0",
+    "asarmor": "2.0.0",
     "electron": "^19.0.8",
     "electron-builder": "^23.1.0"
   },
