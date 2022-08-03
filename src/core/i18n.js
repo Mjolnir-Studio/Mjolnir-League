@@ -23,10 +23,12 @@ const $ = {
                 if(UserLocale == "zh-TW"){
                     i18n.setLocale('tw');
                     store.set('UserLastLocale', 'tw');
+                    settings.accept_checkbox = true;
                 }else{
                     console.warn(`[WARN] Not have this ${UserLocale} Language file use default lang... If you want change Display Language please wait software open complete. Go setting>Display Language> Change you prefer display language.`);
                     i18n.setLocale('en');
                     store.set('UserLastLocale', 'en');
+                    settings.accept_checkbox = true;
                 }
             }
             console.log(`[INFO] Now i18n Display Language file is:${i18n.getLocale()}.json`);

@@ -49,6 +49,10 @@ contextBridge.exposeInMainWorld(
                 "homepage-summoner_icon",
                 "homepage-summoner_name",
                 "homepage-summoner_lv",
+                "homepage-RANKED_SOLO_5x5_icon",
+                "homepage-RANKED_SOLO_5x5_icon_title",
+                "homepage-RANKED_FLEX_SR_icon",
+                "homepage-RANKED_FLEX_SR_icon_title",
             ];
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 

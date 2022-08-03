@@ -52,8 +52,11 @@ const $ = {
             if(selfsummoner.name){
                 console.log(`連線帳號: ${selfsummoner.name}`);
                 // request.get_summoner(); // debug
-                main.webContents.send('homepage-summoner_lv', `${selfsummoner.level}`);
+                main.webContents.send('homepage-summoner_icon', selfsummoner.icon_data);
+                main.webContents.send('homepage-summoner_name', selfsummoner.name);
+                main.webContents.send('homepage-summoner_lv', selfsummoner.level);
                 request.get_summoner_assets();
+                request.get_summoner_rank();
             }else{
                 // console.log(`連線帳號: ${selfsummoner.name} (No Output)`);
                 console.log("重新獲取當前玩家召喚師資料中....");

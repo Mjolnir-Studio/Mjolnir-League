@@ -15,7 +15,6 @@ ipcMain.on("toMain", async (event, args) => {
         unit.closeApp();
     }else if(args == "appver"){
         main.webContents.send('appver', `${appver}`);
-
     }else if(args == "English"){ // 顯示語言
       i.setLocale('en');
       store.set('UserLastLocale', 'en');
@@ -51,6 +50,10 @@ ipcMain.on("toMain", async (event, args) => {
       main.webContents.send('homepage-summoner_icon', selfsummoner.icon_data);
       main.webContents.send('homepage-summoner_name', selfsummoner.name);
       main.webContents.send('homepage-summoner_lv', selfsummoner.level);
+      main.webContents.send('homepage-RANKED_SOLO_5x5_icon', selfsummoner_rank.RANKED_SOLO_5x5.icon_data);
+      main.webContents.send('homepage-RANKED_SOLO_5x5_icon_title', `Tier: ${selfsummoner_rank.RANKED_SOLO_5x5.division} \nLP:${selfsummoner_rank.RANKED_SOLO_5x5.pt}`);
+      main.webContents.send('homepage-RANKED_FLEX_SR_icon', selfsummoner_rank.RANKED_FLEX_SR.icon_data);
+      main.webContents.send('homepage-RANKED_FLEX_SR_icon_title', `Tier: ${selfsummoner_rank.RANKED_FLEX_SR.division} \nLP:${selfsummoner_rank.RANKED_FLEX_SR.pt}`);
     }else if(args == "kill_lolrender"){
         exec('taskkill /f /im LeagueClientUxRender.exe',function (error, stdout, stderr) {
           console.log(`[INFO] ${i.__('ipcMain kill lolrender')}`)

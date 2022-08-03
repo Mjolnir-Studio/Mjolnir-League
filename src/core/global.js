@@ -69,6 +69,20 @@ global.selfsummoner = {
     puuid: null,
     summonerId: null,
 }
+global.selfsummoner_rank = {
+    RANKED_SOLO_5x5:{
+        icon_icon: null,
+        tier: null, // SILVER
+        division: null, // IV III II I
+        pt: 0, // 當前積分分數 0~100 (?)
+    },
+    RANKED_FLEX_SR:{
+        icon_icon: null,
+        tier: null,
+        division: null,
+        pt: 0,
+    }
+}
 // game status
 global.gameQueueType = null;
 global.gameStatus = null;
