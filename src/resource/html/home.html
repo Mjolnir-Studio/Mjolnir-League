@@ -14,18 +14,41 @@
 
         <!-- ipc -->
         <script>
+            parent.api.receive("homepage-summoner_icon", (data) => {
+                // $("#title").text(data);
+                $("#summoner_icon").attr("src",data);
+            });
 
+            parent.api.receive("homepage-summoner_name", (data) => {
+                $("#summoner_name").text(data);
+            });
+
+            parent.api.receive("homepage-summoner_lv", (data) => {
+                $("#summoner_lv").text(data);
+            });
         </script>
         <script>
             function load(){
-              // example
-              parent.api.send("toMain", "");
+                parent.api.send("toMain", "title_banner");
             }
         </script>
     </head>
     <body onload="load()">
         <div class="noselect body_content">
-            <span style="color:black;" id="waiting_lol_client_connect">LOL客戶端有連線到</span>
+
+          <div class="title_banner">
+            <div class="summoner_icon_group">
+              <img id="summoner_icon" alt="image error"/>
+              <div id="summoner_name"></div><br>
+              <div id="summoner_lv">0</div>
+            </div>
+            <!-- <img src="{把imgDataUrl放這}"> -->
+            <!-- <span>召喚師名稱:</span><br>
+            <span>召喚師等級上方為召喚師UC圖示</span>
+            <span>右側為召喚師單雙牌位 圖示展示</span>
+            <span>此外這些可以複製轉換成圖片給玩家show 在 Discord or IG or FB or Reddit... etc</span> -->
+          </div>
+            <!-- <span style="color:black;" id="waiting_lol_client_connect">LOL客戶端有連線到</span> -->
         </div>
     </body>
 </html>

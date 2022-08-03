@@ -17,9 +17,41 @@
 
 body{
   /* 背景 */
-  background-color: white;
+  color: white;
+  background-color: #131211;
 }
 
-.body_content{
-  position: absolute;
+.title_banner{
+  background-color: #393633;
+  border:1px gray solid;
+  /* border-radius: 50px; */
+  border-radius: 10px 10px 10px 10px;
+  width: 100%;
+}
+
+#summoner_icon{
+  /* width: 64px; */
+  display:inline-block;
+  width: 72px;
+  border:2px gray solid;
+  border-radius: 50px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+#summoner_name{
+  color: white;
+  display:inline-block;
+  line-height: 50px;
+  vertical-align: middle;
+  font-size: 28px;
+}
+
+#summoner_lv{
+  /* display:flex; */
+  width: 72px;
+  text-align: center ;
+  /* text-align: left; */
+  font-size: 12px;
+  margin-left: 5px;
 }

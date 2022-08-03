@@ -45,6 +45,10 @@ contextBridge.exposeInMainWorld(
                 // waitinglol
                 "watinglolpage-title",
                 "watinglolpage-disconnect",
+                // home
+                "homepage-summoner_icon",
+                "homepage-summoner_name",
+                "homepage-summoner_lv",
             ];
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 

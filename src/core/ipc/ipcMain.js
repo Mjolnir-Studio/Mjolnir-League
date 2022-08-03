@@ -47,7 +47,10 @@ ipcMain.on("toMain", async (event, args) => {
       main.webContents.send('watinglolpage-disconnect', `${i.__('watinglolpage disconnect')}`);
     }else if(args == "onDisconnect"){
       main.webContents.send('indexpage-disconnect');
-
+    }else if(args == "title_banner"){
+      main.webContents.send('homepage-summoner_icon', selfsummoner.icon_data);
+      main.webContents.send('homepage-summoner_name', selfsummoner.name);
+      main.webContents.send('homepage-summoner_lv', selfsummoner.level);
     }else if(args == "kill_lolrender"){
         exec('taskkill /f /im LeagueClientUxRender.exe',function (error, stdout, stderr) {
           console.log(`[INFO] ${i.__('ipcMain kill lolrender')}`)

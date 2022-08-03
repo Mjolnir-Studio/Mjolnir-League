@@ -50,7 +50,7 @@ const $ = {
             ws.on('error', function (event) {
                 console.warn(`[wss]錯誤訊息: ${event}`);
             });
-        }) 
+        });
     }
 }
 module.exports = $;

@@ -60,8 +60,10 @@ global.url_prefix = null;
 // gameQueueType
 global.selfsummoner = {
     icon: 0,
+    icon_data: null,
     id: null,
     name: null,
+    level: 0,
     pid: null,
     platformId: null,
     puuid: null,
