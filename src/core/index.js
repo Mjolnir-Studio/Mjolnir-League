@@ -27,6 +27,7 @@ const $ = {
     },
     run: async function(){
       console.warn("開始檢查權限然後執行主程式!");
+      unit.calculatestorage();
       await permission.check_permission();
       let starterTimer = setInterval(()=>{
           if(mainWindowReady && permission){

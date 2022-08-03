@@ -21,7 +21,7 @@ const $ = {
             },{type: 'separator'},
             {
                 label: `Clean log (${logstorage.storage} ${logstorage.type})`, click: function () {
-                    $.cleanlog();
+                    unit.cleanlog();
                     console.log(`[INFO] ${i.__('log has clean', logstorage.storage + logstorage.type)}`);
                 }
             },{type: 'separator'},
@@ -51,7 +51,7 @@ const $ = {
             },{type: 'separator'},
             {
                 label: `Clean log (${logstorage.storage} ${logstorage.type})`, click: function () {
-                    $.cleanlog();
+                    unit.cleanlog();
                     console.log(`[INFO] ${i.__('log has clean', logstorage.storage + logstorage.type)}`);
                 }
             },{type: 'separator'},
