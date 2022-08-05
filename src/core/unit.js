@@ -1,7 +1,8 @@
 "use strict";
 const { app, dialog, Menu, shell } = require("electron");
 const i = require('./i18n.config');
-
+const Store = require('electron-store');
+const store = new Store();
 // module
 const fs = require('fs-extra');
 const path = require('path');
@@ -39,6 +40,26 @@ const $ = {
             detail: detail,
             noLink: nolink,
             cancelId:1
+        });
+    },
+    showMessage_ga: function(window, title, type, message, detail,nolink){
+        dialog.showMessageBox(window, {
+            title: title,
+            type: type,
+            message: message,
+            detail: detail,
+            noLink: nolink,
+            buttons: [`${i.__('I agree and continue')}`,`${i.__('I disagree and quit')}`],
+        }).then((index) => {
+            if(index.response === 0){
+                // shell.openExternal("http://mjolnirdc.yomisana.xyz/");
+                console.log("同意軟體啟用軟體分析模塊");
+                store.set('initialization', false);
+                require('./analytics');
+            }else if(index.response === 1){
+                console.log("不同意軟體啟用軟體分析模塊");
+                $.closeApp();
+            }
         });
     },
     calculatestorage:function(){

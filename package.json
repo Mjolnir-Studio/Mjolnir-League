@@ -26,6 +26,8 @@
     "lcu-connector-extra": "^1.0.5",
     "nodejs-fs-utils": "^1.2.6",
     "path": "^0.12.7",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "universal-analytics": "^0.5.3",
+    "uuid": "^8.3.2"
   }
 }

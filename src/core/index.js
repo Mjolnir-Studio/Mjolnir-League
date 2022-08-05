@@ -11,6 +11,8 @@ const unit = require('./unit');
 const electronLogger = require('electron-log');
 const {autoUpdater} = require("electron-updater");
 const lolclient = require('./lol/get_client');
+const Store = require('electron-store');
+const store = new Store();
 //basic app info
 appname = app.getName();
 appver = app.getVersion();
@@ -27,6 +29,18 @@ const $ = {
     },
     run: async function(){
       console.warn("開始檢查權限然後執行主程式!");
+      let initialization = store.get('initialization');
+      if(initialization == undefined){
+        store.set('initialization', true);
+        initialization = true;
+      }else if(initialization == true){
+        store.set('initialization', true);
+        initialization = true;
+      }else{
+        store.set('initialization', false);
+        initialization = false;
+      }
+      // console.log(`初始化值: ${initialization}`);
       unit.calculatestorage();
       await permission.check_permission();
       let starterTimer = setInterval(()=>{
@@ -35,6 +49,14 @@ const $ = {
             clearInterval(starterTimer);
             main.show();
             tray.taskbar(main);
+            // GA initialization
+            if(initialization){
+              console.log("尚未是否同意使用者體驗條款");
+              unit.showMessage_ga(main, appname, "info", `${appname} ${i.__('Terms of User Experience')}`, `${i.__('Terms of User Experience detail')} ${appname} ${i.__('Terms of User Experience detail1')}\n   ${i.__('Terms of User Experience detail rule1')}\n   ${i.__('Terms of User Experience detail rule2')}\n   ${i.__('Terms of User Experience detail rule3')}` , false);
+            }else{
+              console.log("同意使用者體驗條款");
+              require('./analytics');
+            }
             splash.close();
             lolclient.start();
           }

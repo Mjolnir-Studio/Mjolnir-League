@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.noselect {
+  -webkit-touch-callout : none ;
+  -webkit-user-select : none ;
+  -webkit-user-drag: none;
+  -khtml-user-select : none ;
+  -moz-user-select : none ;
+  -ms-user-select : none ;
+  user-select : none ;
+}
+
+body{
+  /* 背景 */
+  color: white;
+  background-color: #131211;
+}
+
+.battle_chat_group{
+  background-color: #393633;
+  border:1px gray solid;
+  border-radius: 10px 10px 10px 10px;
+  width: 100%;
+}
+
+.battle_chat{
+  margin-left: 5px;
+}

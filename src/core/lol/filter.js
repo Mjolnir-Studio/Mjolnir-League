@@ -30,9 +30,14 @@ const $ = {
                 }else{
                     ReadyCheck = false;
                 }
-                
             }else if(data[2].uri == "/lol-service-status/v1/ticker-messages"){ // debug uri
-                console.log("ticker-messages");
+                console.log("ticker-messages"); // 目前沒有用到
+            }else if(data[2].uri.match(/^(\/lol-chat\/v1\/conversations\/)([0-9a-zA-Z~]+)(%40champ-select.pvp.net\/messages)$/ig)){ // debug uri
+                console.log(data[2].uri);
+                console.log("summoner msg");
+            }else if(data[2].uri.match(/^(\/lol-chat\/v1\/conversations\/)([0-9a-zA-Z~]+)(%40champ-select.pvp.net\/messages\/)([0-9a-zA-Z_]+)$/ig)){ // debug uri
+                console.log(data[2].uri);
+                console.log("system msg");
             }else{
                 // console.log(`[!wss! - Not have filter data]${body}`); // don't want show it up because nah want let console have lot of  trash info
                 // console.log(`[!wss! - Not have filter data]${body}`);
