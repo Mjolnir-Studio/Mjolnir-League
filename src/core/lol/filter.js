@@ -1,5 +1,7 @@
 "use strict";
 const request = require('./post_client');
+const i = require('../i18n.config');
+
 const $ = {
     post: function(body){
         let data = JSON.parse(body);
@@ -29,18 +31,25 @@ const $ = {
                     }
                 }else{
                     ReadyCheck = false;
+                    main.webContents.send('chatpage-sc-disable', `${i.__('battle chat waiting text default')}`);
                 }
             }else if(data[2].uri == "/lol-service-status/v1/ticker-messages"){ // debug uri
                 console.log("ticker-messages"); // 目前沒有用到
-            }else if(data[2].uri.match(/^(\/lol-chat\/v1\/conversations\/)([0-9a-zA-Z~]+)(%40champ-select.pvp.net\/messages)$/ig)){ // debug uri
-                console.log(data[2].uri);
-                console.log("summoner msg");
-            }else if(data[2].uri.match(/^(\/lol-chat\/v1\/conversations\/)([0-9a-zA-Z~]+)(%40champ-select.pvp.net\/messages\/)([0-9a-zA-Z_]+)$/ig)){ // debug uri
-                console.log(data[2].uri);
-                console.log("system msg");
+            }else if(data[2].uri == "/lol-lobby/v2/lobby/countdown"){ // debug uri
+                console.log(`countdown`);
+                // main.webContents.send('chatpage-sc-disable', `${i.__('battle chat waiting text default')}`);
+            }else if(data[2].uri.match(/^(\/lol-chat\/v1\/conversations\/)([0-9a-zA-Z~]+)(%40champ-select.pvp.net\/messages)$/ig)){ // 選擇英雄召喚師訊息
+                // console.log(data[2].uri);
+                request.get_sc_chat_data(data[2].uri);
+            }else if(data[2].uri.match(/^(\/lol-chat\/v1\/conversations\/)([0-9a-zA-Z~]+)(%40champ-select.pvp.net\/messages\/)([0-9a-zA-Z_]+)$/ig)){ // 選擇英雄系統訊息
+                let prodata = data[2].uri?.split('/');
+                let resultdata = `/${prodata[1]}/${prodata[2]}/${prodata[3]}/${prodata[4]}/${prodata[5]}`
+                request.get_sc_chat_data(resultdata);
             }else{
                 // console.log(`[!wss! - Not have filter data]${body}`); // don't want show it up because nah want let console have lot of  trash info
                 // console.log(`[!wss! - Not have filter data]${body}`);
+
+                // 
             }
         }else if(data[1] == "GetSelfSummoner"){
             selfsummoner.icon = data[2].icon;

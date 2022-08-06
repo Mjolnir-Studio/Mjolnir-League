@@ -157,6 +157,61 @@ const $ = {
                 }
             );
         });
+    },
+    get_sc_chat_data: function(url){
+        request.get({
+            url: url_prefix + `${url}`,
+            strictSSL: false,
+            encoding: null,
+            headers:{
+                'Accept': 'application/json',
+                'Authorization': client_lockfile.httptoken
+            }
+        },
+        async function(err, httpResponse, body){
+                try{
+                    let data = JSON.parse(body);
+                    for (let i = 0; i< data.length; i++){
+                        let tick_timestamp = new Date(data[i].timestamp); // timestamp
+                        var x = `[${tick_timestamp.toLocaleString()}]`;
+                        // var x = `[${tick_timestamp.toLocaleString()}] ${obj.displayName}: ${data[i].body}`;
+                        // console.log(`${data[i].fromSummonerId}`);
+                        let summoner_name = await $.get_sc_chat_summonername(`${data[i].fromSummonerId}`);
+                        x += ` ${summoner_name}:${data[i].body}`;
+                        // console.log(x);
+                        if(i != 0){
+                            select_champion.msg = select_champion.msg + x + "\n";
+                        }else{
+                            select_champion.msg = x + "\n";
+                        }
+                        // console.log(select_champion.msg);
+                        main.webContents.send('chatpage-sc-enable', `${select_champion.msg}`);
+                    }
+                }catch(error){
+                    console.warn(error);
+                }
+            }
+        );
+    },
+    get_sc_chat_summonername: function(getdata){
+        return new Promise((resolve,reject)=>{
+            request.get({
+                url: url_prefix + `/lol-summoner/v1/summoners/${getdata}`,
+                strictSSL: false,
+                headers:{
+                    'Accept': 'application/json',
+                    'Authorization': client_lockfile.httptoken
+                }
+            },
+            function(err, httpResponse, body){
+                try{
+                    let obj = JSON.parse(body);
+                    resolve(obj.displayName);
+                }catch(error){
+                    console.warn(error);
+                }
+            });
+        });
     }
 }
 module.exports = $;

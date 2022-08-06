@@ -53,6 +53,10 @@ contextBridge.exposeInMainWorld(
                 "homepage-RANKED_SOLO_5x5_icon_title",
                 "homepage-RANKED_FLEX_SR_icon",
                 "homepage-RANKED_FLEX_SR_icon_title",
+                // Chat
+                "chatpage-sc-active",
+                "chatpage-sc-enable",
+                "chatpage-sc-disable",
             ];
             if (validChannels.includes(channel)) {
                 // Deliberately strip event as it includes `sender` 

@@ -8,6 +8,7 @@
     "ipcMain kill lolrender": "終結LOL繪製處理程序",
     "ipcMain accept checkbox enable": "啟用自動接受",
     "ipcMain accept checkbox disable": "禁用自動接受",
+    "ipcMain champselect chat copy success": "複製選擇英雄聊天室內容成功",
     "Checking for update...": "檢查是否有更新...",
     "Checking for update... webContents": "檢查是否有更新...",
     "Update available.": "有可用更新版本!",
@@ -53,5 +54,6 @@
     "settingspage appdev title": "開發者:",
     "settingspage appdev text": "Mjolnir Studio",
     "watinglolpage title": "沒有偵測到 LOL客戶端 目前處於離線狀態",
-    "watinglolpage disconnect": "使用離線狀態查看"
+    "watinglolpage disconnect": "使用離線狀態查看",
+    "battle chat waiting text default": "普羅等待連線到對戰房間時睡著了..."
 }

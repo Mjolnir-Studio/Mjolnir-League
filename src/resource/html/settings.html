@@ -32,7 +32,7 @@
           parent.api.receive("settingspage-title_lang", (data) => {
             $("#title_lang").text(data);
           });
-          
+
           parent.api.receive("settingspage-accept_checkbox", (data) => {
             $("#accept_checkbox_text").text(data);
           });
@@ -142,7 +142,7 @@
               function onKill_lolrender(){
                 parent.api.send("toMain","kill_lolrender");
               }
-              
+
               // Display Lang
               function onEnglish(){
                 parent.api.send("toMain","English");

@@ -20,13 +20,51 @@ body{
   background-color: #131211;
 }
 
+a{
+  color: white;
+}
+
 .battle_chat_group{
+  text-align:center;
   background-color: #393633;
   border:1px gray solid;
   border-radius: 10px 10px 10px 10px;
   width: 100%;
 }
 
-.battle_chat{
-  margin-left: 5px;
+/* 普羅圖片 */
+#battle_chat_waiting_icon{
+  text-align:center;
+  opacity: 1;
+}
+
+#battle_chat_waiting_icon{
+  filter: invert(1);
+}
+
+/* 普羅底下的文字 */
+#battle_chat_waiting_text{
+  display: block;
+}
+
+/* 聊天紀錄文字 */
+#battle_chat_text{
+  display: block;
+  position: relative;
+  text-align: left !important;
+  white-space: pre-wrap;
+  margin-left: 10px;
+  opacity: 0;
+  /* opacity: 1; */
+}
+
+/* 複製按鈕 */
+#copy_all{
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 38px !important;
+  opacity: 0;
+  /* opacity: 1; */
 }

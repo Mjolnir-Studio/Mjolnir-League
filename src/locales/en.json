@@ -10,6 +10,7 @@
     "ipcMain kill lolrender": "End the LOL render handler",
     "ipcMain accept checkbox enable": "Enable auto-accept",
     "ipcMain accept checkbox disable": "Disable auto-accept",
+    "ipcMain champselect chat copy success": "Copy champselect chat room content successfully",
     "Checking for update...": "Check for updates...",
     "Checking for update... webContents": "Check for updates...",
     "Update available.": "An updated version is available!",
@@ -24,8 +25,8 @@
 	"Update Error webContents": "An update error occurred! Please check the log file.",
     "Go Discord to Report this issue": "Head over to the Mjolnir Discord to report this issue",
     "Terms of User Experience": "Terms of User Experience",
-    "Terms of User Experience detail": "為了能讓",
-    "Terms of User Experience detail1" :"給使用者有個完善的體驗，軟體將會收集以下數位資料",
+    "Terms of User Experience detail": "In order to allow",
+    "Terms of User Experience detail1" :"to give users a complete experience, the software will collect the following digital data",
     "Terms of User Experience detail rule1" :"●User ID(UUID)",
     "Terms of User Experience detail rule2" :"●Page usage",
     "Terms of User Experience detail rule3" :"●The location of the user's country",
@@ -55,5 +56,6 @@
     "settingspage appdev title": "dev:",
     "settingspage appdev text": "Mjolnir Studio",
     "watinglolpage title": "LOL client not detected is currently offline",
-    "watinglolpage disconnect": "Use offline status view"
+    "watinglolpage disconnect": "Use offline status view",
+    "battle chat waiting text default": "Poro fell asleep while waiting to connect to the battle(champselect) room..."
 }

@@ -95,3 +95,8 @@ global.settings = {
 
 // app unit
 global.ReadyCheck = false;
+
+// select chat
+global.select_champion = {
+    msg: null,
+}

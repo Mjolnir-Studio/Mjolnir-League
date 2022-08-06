@@ -1,4 +1,4 @@
-const {ipcMain} = require('electron');
+const {ipcMain, clipboard} = require('electron');
 const i = require('../i18n.config');
 const unit = require('../unit');
 // modules
@@ -83,6 +83,25 @@ ipcMain.on("toMain", async (event, args) => {
           // console.warn("禁用自動接受");
           console.warn(`[WARN] ${i.__('ipcMain accept checkbox disable')}`);
           settings.accept_checkbox = false;
+        }
+      }
+
+      if(args[0] == "chatpage"){
+        if(args[1]){
+          main.webContents.send('chatpage-sc-enable', `${args[1]}`);
+        }else{
+          main.webContents.send('chatpage-sc-disable', `${i.__('battle chat waiting text default')}`);
+        }
+      }
+
+      if(args[0] == "cs_chat_copy"){
+        if(args[1]){
+          // console.log("複製聊天室內容成功");
+          console.log(`[INFO] ${i.__('ipcMain champselect chat copy success')}`);
+          // 複製聊天室文字
+          clipboard.writeText(`${args[1].replace(/^(\r\n|\n|\r|\t| )+/gm, "")}[Mjolnir League]`);
+        }else{
+          clipboard.writeText(args[1]);
         }
       }
     }
