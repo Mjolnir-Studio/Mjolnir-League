@@ -26,4 +26,4 @@
 
 # 軟體名稱
 軟體正式隸屬於 Mjolnir Studio(Mjolnir 工作室)底下  
-Mjolnir League 軟體開發者為: yomisana(優米撒那)
+Mjolnir League 軟體開發者為: yomisana(優米撒那 - 主要維護者) 、 5026(夜澪 - 次級維護者)
