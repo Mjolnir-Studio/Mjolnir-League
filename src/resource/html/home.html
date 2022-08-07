@@ -55,6 +55,8 @@
             <!-- 召喚師頭貼，名稱，等級 -->
             <div class="summoner_icon_group">
               <img id="summoner_icon" />
+              <!-- <div id="summoner_name"></div> --> <!-- old version -->
+              <a id="summoner_name_copy" href="javascript:SummonerNameToClipBoard();"><div id="summoner_name"></div></a>
               <div id="summoner_name"></div>
               <div id="summoner_lv">0</div>
             </div>
@@ -92,5 +94,21 @@
               <span style="color:white;" id="debug">此處未來將會成為玩家對戰歷史紀錄表(10~20場)</span>
             </div>
         </div>
+
+        <!-- 讓按鈕有用吧! -->
+        <script type="text/javascript">
+          // let menu_btn = document.querySelector("#menu_btn");
+          // let sidebar = document.querySelector(".sidebar");
+          //
+          // menu_btn.onclick = function(){
+          //   sidebar.classList.toggle("active");
+          // }
+
+          function SummonerNameToClipBoard() {
+            console.log("觸發複製英雄名稱功能!");
+            var span_Text = document.getElementById("summoner_name").innerText;
+            parent.api.send("toMain",['summoner_name_copy', span_Text]); // 後端
+          }
+        </script>
     </body>
 </html>

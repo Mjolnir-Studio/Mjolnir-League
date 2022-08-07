@@ -11,6 +11,8 @@
     "ipcMain accept checkbox enable": "Enable auto-accept",
     "ipcMain accept checkbox disable": "Disable auto-accept",
     "ipcMain champselect chat copy success": "Copy champselect chat room content successfully",
+    "ipcMain summoner name copy success": "Copy summoner name successfully",
+    "My summoner name": "My summoner name:",
     "Checking for update...": "Check for updates...",
     "Checking for update... webContents": "Check for updates...",
     "Update available.": "An updated version is available!",

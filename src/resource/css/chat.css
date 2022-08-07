@@ -58,6 +58,10 @@ a{
   /* opacity: 1; */
 }
 
+#battle_chat_btn{
+  text-decoration:none;
+}
+
 /* 複製按鈕 */
 #copy_all{
   display: block;

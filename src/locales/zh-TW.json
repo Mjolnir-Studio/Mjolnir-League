@@ -9,6 +9,8 @@
     "ipcMain accept checkbox enable": "啟用自動接受",
     "ipcMain accept checkbox disable": "禁用自動接受",
     "ipcMain champselect chat copy success": "複製選擇英雄聊天室內容成功",
+    "ipcMain summoner name copy success": "複製英雄名稱成功",
+    "My summoner name": "我的召喚師名稱:",
     "Checking for update...": "檢查是否有更新...",
     "Checking for update... webContents": "檢查是否有更新...",
     "Update available.": "有可用更新版本!",
