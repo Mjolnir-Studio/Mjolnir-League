@@ -1,7 +1,7 @@
 {
   "name": "mjolnir-league",
   "productName": "Mjolnir League",
-  "version": "2.2.0",
+  "version": "2.2.3",
   "description": "Mjolnir League 2.0 New Style New Way",
   "main": "index.js",
   "scripts": {
