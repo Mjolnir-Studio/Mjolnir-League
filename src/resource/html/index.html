@@ -57,6 +57,23 @@
       window.api.receive("indexpage-disconnect", (data) => {
         $("#page_container").attr("src","home.html");
       });
+
+      window.api.receive("indexpage-forcepage", (data) => {
+        $("#page_container").attr("src",`${data}.html`);
+      });
+
+      // 主葉面也可以幫忙儲存選擇英雄聊天內容
+      window.api.receive("indexpage-sc-enable", (body) => {
+        // 處理訊息方式
+        console.log("index 幫忙儲存了聊天紀錄");
+        localStorage.setItem('cs_chat_data',body);
+        // $('#battle_chat_text').text(localStorage.getItem('cs_chat_data'));
+      });
+
+      window.api.receive("indexpage-sc-disable", (data) => {
+        console.log("index 幫忙清除聊天紀錄");
+        localStorage.setItem('cs_chat_data', "");
+      });
     </script>
     <script>
         function load(){

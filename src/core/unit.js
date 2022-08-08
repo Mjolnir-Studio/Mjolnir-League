@@ -125,5 +125,8 @@ const $ = {
             taskbar.setContextMenu(contextmenu);
         });
     },
+    cleanlasttimedata: function(){
+        main.webContents.send('indexpage-sc-disable', ``);
+    } 
 }
 module.exports = $;

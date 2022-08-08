@@ -26,11 +26,11 @@
               poro_text.style.opacity = 0;
               // 文字與複製圖示顯示
               let battle_chat_text = document.getElementById('battle_chat_text');
-              let copy_all = document.getElementById('copy_all');
+              // let copy_all = document.getElementById('copy_all');
               battle_chat_text.style.opacity = 1;
-              copy_all.style.opacity = 1;
+              // copy_all.style.opacity = 1;
               // 處理訊息方式
-              localStorage.setItem('cs_chat_data',body);
+              // localStorage.setItem('cs_chat_data',body);
               $('#battle_chat_text').text(localStorage.getItem('cs_chat_data'));
             });
 
@@ -41,9 +41,9 @@
               poro_text.style.opacity = 1;
               // 文字與複製圖示顯示
               let battle_chat_text = document.getElementById('battle_chat_text');
-              let copy_all = document.getElementById('copy_all');
+              // let copy_all = document.getElementById('copy_all');
               battle_chat_text.style.opacity = 0;
-              copy_all.style.opacity = 0;
+              // copy_all.style.opacity = 0;
               $("#battle_chat_waiting_text").text(data);
               localStorage.setItem('cs_chat_data', "");
               $("#battle_chat_text").text(localStorage.getItem('cs_chat_data'));
@@ -62,7 +62,7 @@
           <div class="battle_chat_group">
               <!-- <span id="battle_chat_text"></span> --> <!-- old version -->
               <a id="battle_chat_btn" href="javascript:champselect_chatToClipBoard();"><span id="battle_chat_text"></span></a>
-              <a id="battle_chat_btn" href="javascript:champselect_chatToClipBoard();"><i class="material-icons" id="copy_all" title="Copy chat msg">copy_all</i></a>
+              <!-- <a id="battle_chat_btn" href="javascript:champselect_chatToClipBoard();"><i class="material-icons" id="copy_all" title="Copy chat msg">copy_all</i></a> -->
               <img id="battle_chat_waiting_icon" draggable = "false" src="https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-social/global/default/poro_sleeping.png">
               <span id="battle_chat_waiting_text"></span>
               <!-- <span id="battle_chat_waiting_text"></span> -->

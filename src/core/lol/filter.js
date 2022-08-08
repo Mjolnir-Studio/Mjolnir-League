@@ -21,18 +21,38 @@ const $ = {
                 main.webContents.send('homepage-summoner_lv', `${selfsummoner.level}`);
                 request.get_summoner_assets();
             }else if(data[2].uri == "/lol-gameflow/v1/gameflow-phase"){
-                gameflowphase = data[2].data;
-                // main.webContents.send('gameflowphase', `gameflowphase:${gameflowphase}`);
-
-                if(gameflowphase == "ReadyCheck"){ // 自動接受
+                body = data[2].data;
+                gameflowphase = body.replace(/[^A-Z0-9]/ig,"");
+                if(gameflowphase == "None"){
+                    console.log("狀態:你目前尚未建立或加入對戰房間");
+                    $.cleanmsgdata();
+                }else if(gameflowphase == "Lobby"){
+                    console.log("狀態:你目前在對戰房間");
+                    $.cleanmsgdata();
+                }else if(gameflowphase == "Matchmaking"){
+                    console.log("狀態:你目前在匹配");
+                    $.cleanmsgdata();
+                }else if(gameflowphase == "ReadyCheck"){ // 自動接受
+                    console.log("狀態:你目前在等待接受配對...");
                     ReadyCheck = true;
                     if(settings.accept_checkbox){
                         request.accept_matchmaking();
                     }
+                }else if(gameflowphase == "ChampSelect"){ // 選擇英雄
+                    console.log("狀態:你目前在選擇英雄...");
+                }else if(gameflowphase == "InProgress"){ // 遊戲中
+                    console.log("狀態:你目前在遊戲中...");
+                }else if(gameflowphase == "Reconnect"){ // 等待重新連接中
+                    console.log("狀態:你目前遊戲還在進行中...請盡快連接回去!");
+                }else if(gameflowphase == "PreEndOfGame"){ // 遊戲結束(選誰Carry)...
+                    console.log("狀態:誰 Carry 這場 或是 態度佳的隊友給他一個選項吧!");
+                    $.cleanmsgdata();
+                }else if(gameflowphase == "EndOfGame"){ // 遊戲正式結束...
+                    console.log("狀態:遊戲結束...下一場吧!");
                 }else{
-                    ReadyCheck = false;
-                    main.webContents.send('chatpage-sc-disable', `${i.__('battle chat waiting text default')}`);
+                    $.cleanmsgdata();
                 }
+                // main.webContents.send('gameflowphase', `gameflowphase:${gameflowphase}`);
             }else if(data[2].uri == "/lol-service-status/v1/ticker-messages"){ // debug uri
                 console.log("ticker-messages"); // 目前沒有用到
             }else if(data[2].uri == "/lol-lobby/v2/lobby/countdown"){ // debug uri
@@ -78,6 +98,16 @@ const $ = {
             }
 
         }
+    },
+    cleanmsgdata: function(){
+        console.log("第一次觸發清理訊息功能");
+        ReadyCheck = false;
+        main.webContents.send('chatpage-sc-disable', `${i.__('battle chat waiting text default')}`);
+        let cleanmsgdataTimer = setTimeout(() => {
+            console.log("第二次觸發(延遲)清理訊息功能");
+            ReadyCheck = false;
+            main.webContents.send('chatpage-sc-disable', `${i.__('battle chat waiting text default')}`);
+        }, 3000);
     }
 }
 module.exports = $;

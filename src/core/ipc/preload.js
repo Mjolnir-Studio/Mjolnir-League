@@ -25,6 +25,9 @@ contextBridge.exposeInMainWorld(
                 "gameflowphase",
                 // index
                 "indexpage-disconnect",
+                "indexpage-forcepage",
+                "indexpage-sc-enable",
+                "indexpage-sc-disable",
                 // Sidebar
                 "sidebardisplaylang-home",
                 "sidebardisplaylang-summoner",

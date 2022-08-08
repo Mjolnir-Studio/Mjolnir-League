@@ -88,8 +88,10 @@ ipcMain.on("toMain", async (event, args) => {
 
       if(args[0] == "chatpage"){
         if(args[1]){
-          main.webContents.send('chatpage-sc-enable', `${args[1]}`);
+          main.webContents.send('indexpage-sc-enable', `${args[1]}`);
+          main.webContents.send('chatpage-sc-enable');
         }else{
+          main.webContents.send('indexpage-sc-disable');
           main.webContents.send('chatpage-sc-disable', `${i.__('battle chat waiting text default')}`);
         }
       }

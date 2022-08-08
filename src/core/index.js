@@ -42,6 +42,7 @@ const $ = {
       }
       // console.log(`初始化值: ${initialization}`);
       unit.calculatestorage();
+      unit.cleanlasttimedata();
       await permission.check_permission();
       let starterTimer = setInterval(()=>{
           if(mainWindowReady && permission){

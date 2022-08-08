@@ -189,7 +189,8 @@ const $ = {
                         // main.webContents.send('chatpage-sc-enable', `${select_champion.msg}`);
                     }
                     console.log(`選擇英雄聊天對話:${select_champion.msg}`);
-                    main.webContents.send('chatpage-sc-enable', `${select_champion.msg}`);
+                    main.webContents.send('indexpage-sc-enable', `${select_champion.msg}`);
+                    main.webContents.send('chatpage-sc-enable', ``);
                 }catch(error){
                     console.warn(error);
                 }
