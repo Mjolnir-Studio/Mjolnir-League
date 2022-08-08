@@ -184,9 +184,12 @@ const $ = {
                         }else{
                             select_champion.msg = x + "\n";
                         }
-                        // console.log(select_champion.msg);
-                        main.webContents.send('chatpage-sc-enable', `${select_champion.msg}`);
+                        // select_champion.msg = x + "\n";
+                        // console.log(`選擇英雄聊天對話:${select_champion.msg}`);
+                        // main.webContents.send('chatpage-sc-enable', `${select_champion.msg}`);
                     }
+                    console.log(`選擇英雄聊天對話:${select_champion.msg}`);
+                    main.webContents.send('chatpage-sc-enable', `${select_champion.msg}`);
                 }catch(error){
                     console.warn(error);
                 }
