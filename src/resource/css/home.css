@@ -61,13 +61,15 @@ body{
 .summoner_rank_icon_group{
   display: inline-block;
   height: 90px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .summoner_icon_detail_group{
   display: inline-block;
-  height: 70px;
-  margin-left: 20px;
+  vertical-align: top;
+  /* height: 90px; */
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 #RANKED_SOLO_5x5_icon{
@@ -88,20 +90,8 @@ body{
   margin-left: 5px;
 }
 
-/* #RANKED_SOLO_5x5_tier{
-  display: block;
-  line-height: 20px;
-  vertical-align: middle;
-  font-size: 18px;
-  padding-left: 5px;
-}
+/* #RANKED_SOLO_5x5_wl{
 
-#RANKED_SOLO_5x5_pt{
-  display: block;
-  line-height: 20px;
-  vertical-align: middle;
-  font-size: 18px;
-  padding-left: 5px;
 } */
 
 /* 彈性 */
@@ -113,28 +103,14 @@ body{
     background-image: var(--url);
     background-position: center;
     background-size: 500%;
-    margin-left: 120px; /* default 5px */
+    /*margin-left: 120px;*/ /* default 5px */
+    margin-left: 30px;
 }
 
 #RANKED_FLEX_SR_5x5_title{
   width: 72px;
   text-align: center ;
   font-size: 18px;
-  margin-left: 120px; /* default 5px */
+  /*margin-left: 120px;*/ /* default 5px */
+  margin-left: 30px;
 }
-
-/* #RANKED_FLEX_SR_5x5_tier{
-  display: block;
-  line-height: 20px;
-  vertical-align: middle;
-  font-size: 18px;
-  padding-left: 5px;
-}
-
-#RANKED_FLEX_SR_5x5_pt{
-  display: block;
-  line-height: 20px;
-  vertical-align: middle;
-  font-size: 18px;
-  padding-left: 5px;
-} */

@@ -82,12 +82,20 @@ global.selfsummoner_rank = {
         tier: null, // SILVER
         division: null, // IV III II I
         pt: null, // 當前積分分數 0~100 (?)
+        l: null,
+        w: null,
+        total_match: null,
+        win_percentage: null,
     },
     RANKED_FLEX_SR:{
         icon_icon: null,
         tier: null,
         division: null,
         pt: null,
+        l: null,
+        w: null,
+        total_match: null,
+        win_percentage: null,
     }
 }
 // game status

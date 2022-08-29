@@ -86,6 +86,7 @@ const $ = {
     },
     get_summoner_rank: function(){
         // 
+        // console.log(selfsummoner.puuid);
         request.get({
             url: url_prefix + `/lol-ranked/v1/ranked-stats/${selfsummoner.puuid}`,
             strictSSL: false,
@@ -104,6 +105,18 @@ const $ = {
                     let RANKED_SOLO_5x5_name = selfsummoner_rank.RANKED_SOLO_5x5.tier.toLowerCase();
                     main.webContents.send('homepage-RANKED_SOLO_5x5_icon_title', `Tier: ${selfsummoner_rank.RANKED_SOLO_5x5.division} \nLP:${selfsummoner_rank.RANKED_SOLO_5x5.pt}`);
                     $.get_summoner_rank_icon(RANKED_SOLO_5x5_name, "RANKED_SOLO_5x5");
+                    // 單雙勝率
+                    selfsummoner_rank.RANKED_SOLO_5x5.l = data.queueMap.RANKED_SOLO_5x5.losses;
+                    selfsummoner_rank.RANKED_SOLO_5x5.w = data.queueMap.RANKED_SOLO_5x5.wins;
+                    selfsummoner_rank.RANKED_SOLO_5x5.total_match = data.queueMap.RANKED_SOLO_5x5.losses + data.queueMap.RANKED_SOLO_5x5.wins;
+                    // Win Percentage
+                    selfsummoner_rank.RANKED_SOLO_5x5.win_percentage = `${Math.round((selfsummoner_rank.RANKED_SOLO_5x5.w / (selfsummoner_rank.RANKED_SOLO_5x5.w + selfsummoner_rank.RANKED_SOLO_5x5.l))* 100)}%`
+                    main.webContents.send('homepage-RANKED_SOLO_5x5_icon_wl', `W:${selfsummoner_rank.RANKED_SOLO_5x5.w} \nL:${selfsummoner_rank.RANKED_SOLO_5x5.l}`);
+                    main.webContents.send('homepage-RANKED_SOLO_5x5_icon_wl_title', `Total Match:${selfsummoner_rank.RANKED_SOLO_5x5.total_match}`);
+                    main.webContents.send('homepage-RANKED_SOLO_5x5_win_percentage', `Win%:${selfsummoner_rank.RANKED_SOLO_5x5.win_percentage}`);
+                    
+                    // console.log(selfsummoner_rank.RANKED_SOLO_5x5.win_percentage);
+                    // ${Math.round((obj.queueMap.RANKED_SOLO_5x5.wins / (obj.queueMap.RANKED_SOLO_5x5.wins + obj.queueMap.RANKED_SOLO_5x5.losses))* 100)}%
                     // console.log("單雙積分");
                     // console.log(selfsummoner_rank.RANKED_SOLO_5x5.tier);
                     // console.log(selfsummoner_rank.RANKED_SOLO_5x5.division);
@@ -118,6 +131,17 @@ const $ = {
                     let RANKED_FLEX_SR_name = selfsummoner_rank.RANKED_FLEX_SR.tier.toLowerCase();
                     main.webContents.send('homepage-RANKED_FLEX_SR_icon_title', `Tier: ${selfsummoner_rank.RANKED_FLEX_SR.division} \nLP:${selfsummoner_rank.RANKED_FLEX_SR.pt}`);
                     $.get_summoner_rank_icon(RANKED_FLEX_SR_name, "RANKED_FLEX_SR");
+                    // 彈性勝率
+                    selfsummoner_rank.RANKED_FLEX_SR.l = data.queueMap.RANKED_FLEX_SR.losses;
+                    selfsummoner_rank.RANKED_FLEX_SR.w = data.queueMap.RANKED_FLEX_SR.wins;
+                    selfsummoner_rank.RANKED_FLEX_SR.total_match = data.queueMap.RANKED_FLEX_SR.losses + data.queueMap.RANKED_FLEX_SR.wins;
+                    // Win Percentage
+                    selfsummoner_rank.RANKED_FLEX_SR.win_percentage = `${Math.round((selfsummoner_rank.RANKED_FLEX_SR.w / (selfsummoner_rank.RANKED_FLEX_SR.w + selfsummoner_rank.RANKED_FLEX_SR.l))* 100)}%`
+                    main.webContents.send('homepage-RANKED_FLEX_SR_icon_wl', `W:${selfsummoner_rank.RANKED_FLEX_SR.w} \nL:${selfsummoner_rank.RANKED_FLEX_SR.l}`);
+                    main.webContents.send('homepage-RANKED_FLEX_SR_icon_wl_title', `Total Match:${selfsummoner_rank.RANKED_FLEX_SR.total_match}`);
+                    main.webContents.send('homepage-RANKED_FLEX_SR_win_percentage', `Win%:${selfsummoner_rank.RANKED_FLEX_SR.win_percentage}`);
+                    
+                    // console.log(selfsummoner_rank.RANKED_FLEX_SR.win_percentage);
                 }catch(error){
                     console.warn(error);
                 }

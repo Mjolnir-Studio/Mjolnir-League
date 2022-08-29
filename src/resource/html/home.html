@@ -31,6 +31,19 @@
             parent.api.receive("homepage-RANKED_SOLO_5x5_icon_title", (data) => {
                 $("#RANKED_SOLO_5x5_icon").attr("title",data);
             });
+
+            parent.api.receive("homepage-RANKED_SOLO_5x5_icon_wl", (data) => {
+                $("#RANKED_SOLO_5x5_wl").text(data);
+            });
+
+            parent.api.receive("homepage-RANKED_SOLO_5x5_icon_wl_title", (data) => {
+                $("#RANKED_SOLO_5x5_wl").attr("title",data);
+            });
+
+            parent.api.receive("homepage-RANKED_SOLO_5x5_win_percentage", (data) => {
+                $("#RANKED_SOLO_5x5_win_percentage").text(data);
+            });
+            
             // $("#RANKED_SOLO_5x5_icon").attr("title","123456");
 
             // 彈性
@@ -40,6 +53,18 @@
 
             parent.api.receive("homepage-RANKED_FLEX_SR_icon_title", (data) => {
                 $("#RANKED_FLEX_SR_5x5_icon").attr("title",data);
+            });
+
+            parent.api.receive("homepage-RANKED_FLEX_SR_icon_wl", (data) => {
+                $("#RANKED_FLEX_SR_wl").text(data);
+            });
+
+            parent.api.receive("homepage-RANKED_FLEX_SR_icon_wl_title", (data) => {
+                $("#RANKED_FLEX_SR_wl").attr("title",data);
+            });
+
+            parent.api.receive("homepage-RANKED_FLEX_SR_win_percentage", (data) => {
+                $("#RANKED_FLEX_SR_win_percentage").text(data);
             });
         </script>
         <script>
@@ -63,25 +88,23 @@
             <!-- 單雙 -->
             <div class="summoner_rank_icon_group">
               <div id="RANKED_SOLO_5x5_icon"/></div>
-
-              <!-- <div class="summoner_icon_detail_group">
-                <div id="RANKED_SOLO_5x5_tier">階:</div>
-                <div id="RANKED_SOLO_5x5_pt">LP:</div>
-              </div> -->
-
               <div id="RANKED_SOLO_5x5_title" >單雙積分</div>
             </div>
+            <!-- 單雙 - 勝率 -->
+            <div class="summoner_icon_detail_group">
+              <div id="RANKED_SOLO_5x5_wl"></div>
+              <div id="RANKED_SOLO_5x5_win_percentage"></div>
+            </div>
 
-            <!-- 單雙 -->
+            <!-- 彈性 -->
             <div class="summoner_rank_icon_group">
               <div id="RANKED_FLEX_SR_5x5_icon"/></div>
-
-              <!-- <div class="summoner_icon_detail_group">
-                <div id="RANKED_FLEX_SR_5x5_tier">階:</div>
-                <div id="RANKED_FLEX_SR_5x5_pt">LP:</div>
-              </div> -->
-
               <div id="RANKED_FLEX_SR_5x5_title">彈性積分</div>
+            </div>
+            <!-- 彈性 - 勝率 -->
+            <div class="summoner_icon_detail_group">
+              <div id="RANKED_FLEX_SR_wl"></div>
+              <div id="RANKED_FLEX_SR_win_percentage"></div>
             </div>
             <!-- <img src="{把imgDataUrl放這}"> -->
             <!-- <span>召喚師名稱:</span><br>

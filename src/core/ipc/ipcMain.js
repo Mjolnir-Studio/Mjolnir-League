@@ -52,8 +52,14 @@ ipcMain.on("toMain", async (event, args) => {
       main.webContents.send('homepage-summoner_lv', selfsummoner.level);
       main.webContents.send('homepage-RANKED_SOLO_5x5_icon', selfsummoner_rank.RANKED_SOLO_5x5.icon_data);
       main.webContents.send('homepage-RANKED_SOLO_5x5_icon_title', `Tier: ${selfsummoner_rank.RANKED_SOLO_5x5.division} \nLP:${selfsummoner_rank.RANKED_SOLO_5x5.pt}`);
+      main.webContents.send('homepage-RANKED_SOLO_5x5_icon_wl', `W:${selfsummoner_rank.RANKED_SOLO_5x5.w} \nL:${selfsummoner_rank.RANKED_SOLO_5x5.l}`);
+      main.webContents.send('homepage-RANKED_SOLO_5x5_icon_wl_title', `Total Match:${selfsummoner_rank.RANKED_SOLO_5x5.total_match}`);
+      main.webContents.send('homepage-RANKED_SOLO_5x5_win_percentage', `Win%:${selfsummoner_rank.RANKED_SOLO_5x5.win_percentage}`);
       main.webContents.send('homepage-RANKED_FLEX_SR_icon', selfsummoner_rank.RANKED_FLEX_SR.icon_data);
       main.webContents.send('homepage-RANKED_FLEX_SR_icon_title', `Tier: ${selfsummoner_rank.RANKED_FLEX_SR.division} \nLP:${selfsummoner_rank.RANKED_FLEX_SR.pt}`);
+      main.webContents.send('homepage-RANKED_FLEX_SR_icon_wl', `W:${selfsummoner_rank.RANKED_FLEX_SR.w} \nL:${selfsummoner_rank.RANKED_FLEX_SR.l}`);
+      main.webContents.send('homepage-RANKED_FLEX_SR_icon_wl_title', `Total Match:${selfsummoner_rank.RANKED_FLEX_SR.total_match}`);
+      main.webContents.send('homepage-RANKED_FLEX_SR_win_percentage', `Win%:${selfsummoner_rank.RANKED_FLEX_SR.win_percentage}`);
     }else if(args == "kill_lolrender"){
         exec('taskkill /f /im LeagueClientUxRender.exe',function (error, stdout, stderr) {
           console.log(`[INFO] ${i.__('ipcMain kill lolrender')}`)
