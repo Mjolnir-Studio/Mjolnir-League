@@ -59,7 +59,9 @@ const $ = {
               // analytics.show();
               // require('./analytics');
             }
-            splash.close();
+            splash.destroy();
+            console.warn(`${splash.isDestroyed()}, ${analytics.isDestroyed()}`);
+
             lolclient.start();
           }
       },100);
@@ -81,6 +83,7 @@ app.whenReady().then(async () => {
             autoUpdater.checkForUpdatesAndNotify();
         }else{
           console.warn("[INFO] Debug模式下...略過檢查更新");
+          analytics.destroy();
           $.run();
         }
     });

@@ -102,6 +102,7 @@ const $ = {
                     selfsummoner_rank.RANKED_SOLO_5x5.division = data.queueMap.RANKED_SOLO_5x5.division;
                     selfsummoner_rank.RANKED_SOLO_5x5.pt = data.queueMap.RANKED_SOLO_5x5.leaguePoints;
                     let RANKED_SOLO_5x5_name = selfsummoner_rank.RANKED_SOLO_5x5.tier.toLowerCase();
+                    main.webContents.send('homepage-RANKED_SOLO_5x5_icon_title', `Tier: ${selfsummoner_rank.RANKED_SOLO_5x5.division} \nLP:${selfsummoner_rank.RANKED_SOLO_5x5.pt}`);
                     $.get_summoner_rank_icon(RANKED_SOLO_5x5_name, "RANKED_SOLO_5x5");
                     // console.log("單雙積分");
                     // console.log(selfsummoner_rank.RANKED_SOLO_5x5.tier);
@@ -115,6 +116,7 @@ const $ = {
                     // console.log(selfsummoner_rank.RANKED_FLEX_SR.division);
                     // console.log(selfsummoner_rank.RANKED_FLEX_SR.pt);
                     let RANKED_FLEX_SR_name = selfsummoner_rank.RANKED_FLEX_SR.tier.toLowerCase();
+                    main.webContents.send('homepage-RANKED_FLEX_SR_icon_title', `Tier: ${selfsummoner_rank.RANKED_FLEX_SR.division} \nLP:${selfsummoner_rank.RANKED_FLEX_SR.pt}`);
                     $.get_summoner_rank_icon(RANKED_FLEX_SR_name, "RANKED_FLEX_SR");
                 }catch(error){
                     console.warn(error);
