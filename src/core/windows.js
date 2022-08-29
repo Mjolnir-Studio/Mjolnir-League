@@ -81,6 +81,37 @@ main.on('close', (event) => {
     }
 });
 
+
+analytics = new BrowserWindow
+({
+    title: analytics_set.title,
+    icon: window_ico,
+    autoHideMenuBar: true,
+    // resizable: false,
+    width: analytics_set.width, height: analytics_set.height,
+    minWidth: analytics_set.min_width,
+    minHeight: analytics_set.min_height,
+    titleBarStyle: 'hiddenInset',
+    frame: true,
+    opacity: 0, // 視窗透明度 0: 透明 1: 不透明
+    show: false,
+    webPreferences: {
+        devTools: false,
+        // devTools: true,
+        fullscreenBoolean: false,
+        fullscreenableBoolean: false,
+        simpleFullscreenBoolean: false,
+        nodeIntegration: true,
+        contextIsolation: true,
+        enableRemoteModule: false, // turn off remote
+        preload: __dirname + "/ipc/preload.js" // use a preload script
+    }
+});
+
+analytics.setMenu(null);
+analytics.loadURL('https://api.yomisana.xyz/mjolnir/league/ga4/');
+
+
 // 單一處理程序鎖定，有兩個以上的處理程序時，強制關閉最後開啟的那個
 if(!instanceLock)
     unit.closeApp();

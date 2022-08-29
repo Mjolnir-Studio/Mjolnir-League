@@ -56,7 +56,8 @@ const $ = {
               unit.showMessage_ga(main, appname, "info", `${appname} ${i.__('Terms of User Experience')}`, `${i.__('Terms of User Experience detail')} ${appname} ${i.__('Terms of User Experience detail1')}\n   ${i.__('Terms of User Experience detail rule1')}\n   ${i.__('Terms of User Experience detail rule2')}\n   ${i.__('Terms of User Experience detail rule3')}` , false);
             }else{
               console.log("同意使用者體驗條款");
-              require('./analytics');
+              // analytics.show();
+              // require('./analytics');
             }
             splash.close();
             lolclient.start();
@@ -87,6 +88,9 @@ app.whenReady().then(async () => {
     main.once('ready-to-show', async () => {
       console.log(`[INFO] ${i.__('Mainwindow ready to show')}`);
       mainWindowReady = true;
+    });
+    analytics.once('ready-to-show', async () => {
+      console.log(`[Electron - core]Analytics準備顯示`);
     });
 });
 

@@ -64,7 +64,9 @@ body{
   width: 55px;
   height: 25px;
   position: relative;
-  top: -5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  /* top: -5px; */
 }
 
 .switch label{

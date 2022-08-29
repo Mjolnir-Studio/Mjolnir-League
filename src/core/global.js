@@ -30,6 +30,13 @@ global.main_set = {
     // general
     title: appname
 }
+global.analytics = null;
+global.analytics_set = {
+    width: 10,min_width: 10,
+    height: 10,min_height: 10,
+    // general
+    title: appname
+}
 // app log storage
 global.logstorage = { // log calc storage
     storage: null,
