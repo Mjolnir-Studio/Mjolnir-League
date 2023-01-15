@@ -1,0 +1,14 @@
+{
+  "name": "mjolnir-league",
+  "productName": "Mjolnir League",
+  "version": "0.0.1",
+  "description": "Created by Mjolnir Studio",
+  "main": "index.js",
+  "scripts": {
+    "build:win": "electron-builder --config ./build/build-win.json",
+    "release:win": "electron-builder --config ./build/build-win.json --publish always",
+    "betarelease:win": "electron-builder --config ./build/build-win-beta-test.json --publish always"
+  },
+  "author": "Mjolnir Studio",
+  "license": "UNLICENSED"
+}
