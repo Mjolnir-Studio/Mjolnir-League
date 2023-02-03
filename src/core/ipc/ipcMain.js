@@ -107,7 +107,8 @@ ipcMain.on("toMain", async (event, args) => {
           // console.log("複製聊天室內容成功");
           console.log(`[INFO] ${i.__('ipcMain summoner name copy success')}`);
           // 複製聊天室文字
-          clipboard.writeText(`${i.__('My summoner name')}${args[1].replace(/^(\r\n|\n|\r|\t| )+/gm, "")}`);
+          // clipboard.writeText(`${i.__('My summoner name')}${args[1].replace(/^(\r\n|\n|\r|\t| )+/gm, "")}`);
+          clipboard.writeText(`${args[1].replace(/^(\r\n|\n|\r|\t| )+/gm, "")}`);
         }else{
           clipboard.writeText(args[1]);
         }

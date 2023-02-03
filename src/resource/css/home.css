@@ -114,3 +114,14 @@ body{
   /*margin-left: 120px;*/ /* default 5px */
   margin-left: 30px;
 }
+
+#create_banner{
+  position:absolute;
+  color: white;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.material-icons_copy_all_size {
+  font-size: 72px !important;
+}
