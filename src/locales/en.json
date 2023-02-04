@@ -53,7 +53,7 @@
     "settingspage accept checkbox": "Autoaccept match",
     "settingspage delete button text": "Delete log",
     "settingspage refresh button text": "Reset client",
-    "settingspage dev button text": "In dev...",
+    "settingspage dev button text": "PatchNote",
     "settingspage appver title": "version:",
     "settingspage appdev title": "dev:",
     "settingspage appdev text": "Mjolnir Studio",

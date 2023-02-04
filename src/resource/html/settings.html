@@ -102,7 +102,7 @@
               <!-- 待確認 -->
               <li id="dev">
                 <a href="javascript:ondev();">
-                  <i class="material-icons">warning</i>
+                  <i class="material-icons">feed</i>
                   <span class="links_name" id="dev_button_text"></span>
                 </a>
               </li>
@@ -143,6 +143,10 @@
 
               function onKill_lolrender(){
                 parent.api.send("toMain","kill_lolrender");
+              }
+
+              function ondev(){
+                parent.api.send("toMain","ondev");
               }
 
               // Display Lang

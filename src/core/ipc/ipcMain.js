@@ -1,4 +1,4 @@
-const {ipcMain, clipboard} = require('electron');
+const {ipcMain, clipboard, shell} = require('electron');
 const i = require('../i18n.config');
 const unit = require('../unit');
 // modules
@@ -60,12 +60,15 @@ ipcMain.on("toMain", async (event, args) => {
       main.webContents.send('homepage-RANKED_FLEX_SR_icon_wl', `W:${selfsummoner_rank.RANKED_FLEX_SR.w} \nL:${selfsummoner_rank.RANKED_FLEX_SR.l}`);
       main.webContents.send('homepage-RANKED_FLEX_SR_icon_wl_title', `Total Match:${selfsummoner_rank.RANKED_FLEX_SR.total_match}`);
       main.webContents.send('homepage-RANKED_FLEX_SR_win_percentage', `Win%:${selfsummoner_rank.RANKED_FLEX_SR.win_percentage}`);
+    }else if(args == "ondev"){
+      // main.shell.openExternal(`https://mjolnir.yomisana.xyz/wiki/docs/mjolnir-league/patchnote/${appver}`);
+      shell.openExternal(`https://mjolnir.yomisana.xyz/wiki/docs/mjolnir-league/patchnote/${appver}`);
     }else if(args == "kill_lolrender"){
-        exec('taskkill /f /im LeagueClientUxRender.exe',function (error, stdout, stderr) {
-          console.log(`[INFO] ${i.__('ipcMain kill lolrender')}`)
-          if(error)
-            console.error("[ERROR] " + error);
-        });
+      exec('taskkill /f /im LeagueClientUxRender.exe',function (error, stdout, stderr) {
+        console.log(`[INFO] ${i.__('ipcMain kill lolrender')}`)
+        if(error)
+          console.error("[ERROR] " + error);
+      });
     }else if(args == "Clean_log"){
         fs.readdir(path.join(log_dir), (err, files) => {
           if (err) {

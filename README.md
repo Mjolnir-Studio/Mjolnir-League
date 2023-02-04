@@ -12,13 +12,15 @@
 [![MPL](https://img.shields.io/static/v1?style=for-the-badge&message=MPL+2.0&color=Green&label=LICENSE)]()
 # 軟體成就
 - [2022/07/22] initial commit
+- [2023/02/03] 2.5K 下載與更新量，開源用的安心。
+- [2023/02/03] 重啟此項目進行緩速推播狀態。
 
 # 功能介紹
 - 就和 [Discord](https://discord.com) 一樣不小心關閉視窗在系統小圖示列可以找到喔! ✔
 - 自動接受戰局 ✔
-- 多國語言(English, 繁體中文)
-- 嶄新的介面 2.0
-- 以全新的程式碼再度呈現(採用 wss 與 request)
+- 多國語言(English, 繁體中文) ✔
+- 嶄新的介面 2.0 ✔
+- 以全新的程式碼再度呈現(採用 wss 與 request) ✔
 
 # MPL授權
 作者的話: 此軟體會開源是為了我小小的心願，希望各位可以多多點個星星，如果有建議的或是錯誤回報可以到 [Discord(Mjolnir Studio)](http://mjolnirdc.yomisana.xyz) 回覆
