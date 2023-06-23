@@ -1,4 +1,5 @@
-# Mjolnir-League
+<h1 align="center">Mjolnir League👹</h1>
+
 此軟體僅有Riot合法的功能 - 後面規劃將僅暫定...  
 [![Releases Download Count](https://img.shields.io/github/downloads/Mjolnir-Studio/Mjolnir-League/total.png?&style=for-the-badge&color=Green&label=Downloads)](https://github.com/Mjolnir-Studio/Mjolnir-League/releases/latest)
 [![Releases version](https://img.shields.io/github/v/release/Mjolnir-Studio/Mjolnir-League.png?&style=for-the-badge&color=Green&label=releases)](https://github.com/Mjolnir-Studio/Mjolnir-League/releases/latest)
